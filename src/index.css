@@ -18,6 +18,9 @@ html {
   font-family: var(--main-font);
   font-size: 10px;
   scroll-behavior: smooth;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 *,
@@ -39,8 +42,9 @@ html {
   padding: 2rem;
   transition: all 0.8s ease-out;
   cursor: pointer;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 1.5rem;
+  max-width: 98.5vw;
 }
 
 #btn-submit:hover {
@@ -56,6 +60,8 @@ html {
   margin: 2rem;
   padding: 2rem;
   border-radius: 0.5rem;
+  border: thin solid #000;
+  box-shadow: 0.5rem 0.5rem rgb(93, 93, 93);
 }
 
 #genre > h2 {
@@ -78,7 +84,6 @@ label:hover {
 
 .header {
   text-align: center;
-  position: sticky;
   top: 0;
   z-index: 997;
   padding: 5px;
@@ -86,6 +91,8 @@ label:hover {
   color: var(--second-color);
   font-size: 22px;
   max-width: 100%;
+  border: thin solid #000;
+  height: auto;
 }
 
 .header img {
@@ -116,6 +123,8 @@ label:hover {
   margin: 2rem;
   padding: 2rem;
   border-radius: 0.5rem;
+  border: thin solid #000;
+  box-shadow: 0.5rem 0.5rem rgb(93, 93, 93);
 }
 
 #type > h2 {

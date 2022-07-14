@@ -10,6 +10,7 @@ export const Header = () => {
             alt="logo"
           />
           <h1>QueMirar.com</h1>
+          <hr />
         </article>
       </section>
     </header>
