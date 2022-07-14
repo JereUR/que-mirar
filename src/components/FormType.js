@@ -2,8 +2,8 @@ import React from "react";
 
 export const FormType = () => {
   return (
-    <form id="tapes">
-      <h2>Selecciona tipo de cinta</h2>
+    <form id="type">
+      <h2>SELECCIONA TIPO DE CINTA</h2>
       <hr />
       <br />
       <input type="checkbox" id="movie" />

@@ -16,7 +16,7 @@ code {
 html {
   box-sizing: border-box;
   font-family: var(--main-font);
-  font-size: 16px;
+  font-size: 10px;
   scroll-behavior: smooth;
 }
 
@@ -26,44 +26,120 @@ html {
   box-sizing: inherit;
 }
 
-.header {
+#btn-submit {
+  width: 100%;
+  display: inline-block;
+  border-radius: 0.75rem;
+  background-color: #1990c8;
+  border: none;
+  color: #000;
   text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 997;
-  padding: 10px;
-  background-color: #c0c417;
-  color: var(--second-color);
-  font-size: 22px;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 2rem;
+  transition: all 0.8s ease-out;
+  cursor: pointer;
+  justify-content: space-around;
+  margin: 1.5rem;
 }
 
-.header img {
-  width: 120px;
-  height: auto;
+#btn-submit:hover {
+  background-color: rgb(36, 169, 16);
+  color: #fff;
+  transform: scale(1.1);
 }
 
-#tapes {
+#genre {
   display: block;
-  width: 50%;
+  width: 100%;
   background-color: rgb(212, 220, 226);
   margin: 2rem;
   padding: 2rem;
   border-radius: 0.5rem;
 }
 
-#tapes > h2 {
+#genre > h2 {
   text-align: center;
 }
 
-#tapes > input,
+#genre > input,
 label {
+  padding: 0.5rem 0;
+  margin: 1rem;
+  font-weight: bold;
+  color: rgb(2, 2, 2);
+  transition: all 0.4s ease-out;
+}
+
+#genre > input:hover,
+label:hover {
+  transform: scale(1.5);
+}
+
+.header {
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 997;
+  padding: 5px;
+  background-color: #e4e67e;
+  color: var(--second-color);
+  font-size: 22px;
+  max-width: 100%;
+}
+
+.header img {
+  width: 100px;
+  height: auto;
+}
+
+.loader {
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.none {
+  display: none;
+}
+
+.selection {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+#type {
+  display: block;
+  width: 100%;
+  background-color: rgb(212, 220, 226);
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+#type > h2 {
+  text-align: center;
+}
+
+#type > input,
+label {
+  padding: 0.5rem 0;
+  margin: 1rem;
   font-size: 1.6rem;
   font-weight: bold;
   color: rgb(2, 2, 2);
   transition: all 0.4s ease-out;
 }
 
-#tapes > input:hover,
+#type > input:hover,
 label:hover {
-  transform: scale(1.35);
+  transform: scale(1.5);
+}
+
+@media screen and (max-width: 1000px) {
+  .selection {
+    display: block;
+    max-width: max-content;
+  }
 }
