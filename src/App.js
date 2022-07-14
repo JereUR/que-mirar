@@ -1,11 +1,12 @@
 import React from "react";
-import { Form } from "./components/Form";
+import { FormType } from "./components/FormType";
+import { Header } from "./components/Header";
 
 function App() {
   return (
     <div>
-      <h1>QueMirar.com</h1>
-      <Form></Form>
+      <Header></Header>
+      <FormType></FormType>
     </div>
   );
 }
