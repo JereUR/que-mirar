@@ -7,17 +7,19 @@ import { SubmitButton } from "./components/SubmitButton";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header></Header>
-      <section class="selection">
+      <section className="selection">
         <FormType></FormType>
         <FormGenres></FormGenres>
       </section>
-      <SubmitButton></SubmitButton>
+      <section className="btn-section">
+        <SubmitButton></SubmitButton>
+      </section>
       <hr />
-      <div class="loader none">
+      <section className="loader none">
         <Loader></Loader>
-      </div>
+      </section>
     </div>
   );
 }
