@@ -3,7 +3,9 @@ import React from "react";
 export const FormGenres = () => {
   return (
     <form id="genre">
-      <h2>SELECCIONA GÉNERO</h2>
+      <h2>
+        <i>SELECCIONA GÉNERO</i>
+      </h2>
       <hr />
       <div className="genre-slc">
         <input
