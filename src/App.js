@@ -1,4 +1,5 @@
 import React from "react";
+import { Footer } from "./components/Footer";
 import { FormGenres } from "./components/FormGenres";
 import { FormType } from "./components/FormType";
 import { Header } from "./components/Header";
@@ -20,6 +21,7 @@ function App() {
       <section className="loader none">
         <Loader></Loader>
       </section>
+      <Footer></Footer>
     </div>
   );
 }
