@@ -1,6 +1,20 @@
 import React from "react";
+import { useState } from "react";
+import { App } from "../App";
 
 export const FormGenres = () => {
+  let genres = [];
+
+  const handleChecked = (e) => {
+    if (!genres.includes(e.target.value)) {
+      genres.push(e.target.value);
+      console.log(genres);
+    } else {
+      genres = genres.filter((item) => item !== e.target.value);
+      console.log(genres);
+    }
+  };
+
   return (
     <form id="genre">
       <h2>
@@ -12,7 +26,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="action"
           id="genre-checkbox1"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox1">Acción</label>
       </div>
@@ -21,7 +35,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="adventure"
           id="genre-checkbox2"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox2">Aventura</label>
       </div>
@@ -30,7 +44,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="animation"
           id="genre-checkbox3"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox3">Animación</label>
       </div>
@@ -39,7 +53,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="biography"
           id="genre-checkbox4"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox4">Biografía</label>
       </div>
@@ -48,7 +62,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="comedy"
           id="genre-checkbox5"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox5">Comedia</label>
       </div>
@@ -57,7 +71,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="crime"
           id="genre-checkbox6"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox6">Crimen</label>
       </div>
@@ -66,7 +80,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="documentary"
           id="genre-checkbox7"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox7">Documental</label>
       </div>
@@ -75,7 +89,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="drama"
           id="genre-checkbox8"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox8">Drama</label>
       </div>
@@ -84,7 +98,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="family"
           id="genre-checkbox9"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox9">Familiar</label>
       </div>
@@ -93,7 +107,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="film-noir"
           id="genre-checkbox10"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox10">Cine Negro</label>
       </div>
@@ -102,7 +116,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="game-show"
           id="genre-checkbox11"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox11">Programa de Juegos</label>
       </div>
@@ -111,7 +125,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="history"
           id="genre-checkbox12"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox12">Historia</label>
       </div>
@@ -120,7 +134,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="horror"
           id="genre-checkbox13"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox13">Terror</label>
       </div>
@@ -129,7 +143,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="musical"
           id="genre-checkbox14"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox14">Musical</label>
       </div>
@@ -138,7 +152,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="mystery"
           id="genre-checkbox15"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox15">Misterio</label>
       </div>
@@ -147,7 +161,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="reality-tv"
           id="genre-checkbox16"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox16">Reality</label>
       </div>
@@ -156,7 +170,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="romance"
           id="genre-checkbox17"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox17">Romántica</label>
       </div>
@@ -165,7 +179,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="sci-fi"
           id="genre-checkbox18"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox18">Ciencia Ficción</label>
       </div>
@@ -174,7 +188,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="sport"
           id="genre-checkbox19"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox19">Deporte</label>
       </div>
@@ -183,7 +197,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="thriller"
           id="genre-checkbox20"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox20">Thriller</label>
       </div>
@@ -192,7 +206,7 @@ export const FormGenres = () => {
           type="checkbox"
           value="war"
           id="genre-checkbox21"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox21">Bélica</label>
       </div>
@@ -201,14 +215,10 @@ export const FormGenres = () => {
           type="checkbox"
           value="western"
           id="genre-checkbox22"
-          onChange={prueba}
+          onChange={handleChecked}
         />
         <label for="genre-checkbox22">Western</label>
       </div>
     </form>
   );
-};
-
-const prueba = (e) => {
-  console.log(e.target.value);
 };
