@@ -2,12 +2,12 @@
 
 # dependencies
 /node_modules
-/src/assets/rootkey.csv
 /.pnp
 .pnp.js
 
 # testing
 /coverage
+/src/rootkey.csv
 
 # production
 /build
