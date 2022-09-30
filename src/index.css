@@ -198,6 +198,10 @@ label {
     height: 100%;
     margin: 1rem;
   }
+
+  .container {
+    display: grid;
+  }
 }
 
 /* CheckBox and labels styles */
