@@ -1,4 +1,4 @@
-import React from "react";
+import { useFetch } from "../hooks/useFetch";
 
 export default function SearchForm() {
   let types = [];
@@ -7,21 +7,40 @@ export default function SearchForm() {
   const typesHandleChecked = (e) => {
     if (!types.includes(e.target.value)) {
       types.push(e.target.value);
-      console.log(types);
     } else {
       types = types.filter((item) => item !== e.target.value);
-      console.log(types);
     }
   };
 
   const genresHandleChecked = (e) => {
     if (!genres.includes(e.target.value)) {
       genres.push(e.target.value);
-      console.log(genres);
     } else {
       genres = genres.filter((item) => item !== e.target.value);
-      console.log(genres);
     }
+  };
+
+  const handleButton = (e) => {
+    let tf = "";
+    let gf = "";
+
+    types.forEach((e) => {
+      tf = tf + e + ",";
+    });
+    const typesFilter = tf.substring(0, tf.length - 1);
+
+    genres.forEach((e) => {
+      gf = gf + e + ",";
+    });
+    const genresFilter = gf.substring(0, gf.length - 1);
+
+    const url = `${process.env.REACT_APP_API_URL}?title_type=${typesFilter}&genres=${genresFilter}&sort=user_rating,desc&num_votes=1000,999999999`;
+    console.log(url);
+
+    //Test
+    fetch(url)
+      .then((res) => (res.ok ? res.json() : Promise.reject()))
+      .then((json) => console.log(json));
   };
 
   return (
@@ -302,7 +321,12 @@ export default function SearchForm() {
         </form>
       </div>
       <section class="btn-section">
-        <input type="submit" id="btn-submit" value="QUÉ MIRAR  >>>"></input>
+        <input
+          type="submit"
+          id="btn-submit"
+          value="QUÉ MIRAR  >>>"
+          onClick={handleButton}
+        ></input>
       </section>
     </div>
   );
