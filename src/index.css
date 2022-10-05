@@ -62,6 +62,12 @@ html {
   transform: scale(1.1);
 }
 
+.clarification {
+  cursor: pointer;
+  width: fit-content;
+  font-size: 2rem;
+}
+
 .container {
   max-width: 100%;
 }
@@ -104,6 +110,7 @@ html {
   border-radius: 0.5rem;
   border: thin solid #000;
   box-shadow: 0.5rem 0.5rem rgb(93, 93, 93);
+  border: none;
 }
 
 #genre > h2 {
@@ -159,6 +166,41 @@ html {
   display: none;
 }
 
+#num-votes {
+  background-color: rgb(212, 220, 226);
+  border-radius: 0.5rem;
+  border: thin solid #000;
+  font-family: "Montserrat", sans-serif;
+  color: #777777;
+  font-size: 2rem;
+  padding: 1rem;
+  border: none;
+  font-weight: 500;
+  box-shadow: 0.5rem 0.5rem rgb(93, 93, 93);
+}
+
+#num-votes > option {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.popup-container {
+  display: flex;
+  justify-content: center;
+}
+
+.popup-container > p {
+  transform: rotate(180deg);
+  font-size: 3rem;
+}
+
+#popup-text {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  line-height: auto;
+  text-align: center;
+}
+
 .selection {
   display: flex;
   justify-content: space-around;
@@ -174,6 +216,7 @@ html {
   border-radius: 0.5rem;
   border: thin solid #000;
   box-shadow: 0.5rem 0.5rem rgb(93, 93, 93);
+  border: none;
 }
 
 #type > h2 {
@@ -189,6 +232,12 @@ label {
   font-weight: bold;
   color: rgb(2, 2, 2);
   transition: all 0.4s ease-out;
+}
+
+.votes-section {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1000px) {
@@ -214,7 +263,7 @@ label {
   width: 100%;
   float: left;
   cursor: pointer;
-  padding: 0 0.6em;
+  padding: 0 0.6rem;
   box-sizing: border-box;
   background: #e6e6e6;
   margin: 1rem;

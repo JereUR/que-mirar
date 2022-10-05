@@ -34,8 +34,9 @@ export default function SearchForm() {
     });
     const genresFilter = gf.substring(0, gf.length - 1);
 
-    const url = `${process.env.REACT_APP_API_URL}?title_type=${typesFilter}&genres=${genresFilter}&sort=user_rating,desc&num_votes=1000,999999999`;
-    console.log(url);
+    const minVotes = document.getElementById("num-votes").value;
+
+    const url = `${process.env.REACT_APP_API_URL}?title_type=${typesFilter}&genres=${genresFilter}&sort=user_rating,desc&num_votes=${minVotes},999999999`;
 
     //Test
     fetch(url)
@@ -43,9 +44,17 @@ export default function SearchForm() {
       .then((json) => console.log(json));
   };
 
+  const popText = (e) => {
+    if (document.getElementById("popup-text").classList.length === 0) {
+      document.getElementById("popup-text").classList.add("none");
+    } else {
+      document.getElementById("popup-text").classList.remove("none");
+    }
+  };
+
   return (
-    <div class="container">
-      <div class="selection">
+    <div className="container">
+      <div className="selection">
         <form id="type">
           <h2>
             <i>SELECCIONA TIPO DE FILM</i>
@@ -319,6 +328,33 @@ export default function SearchForm() {
             <label for="genre-checkbox22">Western</label>
           </div>
         </form>
+      </div>
+      <div className="votes-section">
+        <select id="num-votes" onfocus="3">
+          <option value="1000" selected>
+            Seleccione mínima cantidad de reseñas (1000 por defecto)
+          </option>
+          <option value="0">0</option>
+          <option value="250">250</option>
+          <option value="500">500</option>
+          <option value="1000">1000</option>
+          <option value="2000">2000</option>
+          <option value="4000">4000</option>
+          <option value="8000">8000</option>
+          <option value="16000">16000</option>
+          <option value="32000">32000</option>
+          <option value="64000">64000</option>
+          <option value="100000">100000</option>
+        </select>
+      </div>
+      <div className="popup-container">
+        <p className="clarification" onClick={popText}>
+          ☟
+        </p>
+        <h3 id="popup-text" className="none">
+          Cuanto mayor sea la cantidad mínima, más confiable serán los títulos
+          mostrados en cuanto a su calidad.
+        </h3>
       </div>
       <section class="btn-section">
         <input
