@@ -1,49 +1,57 @@
-import React, { useState, useEffect } from "react";
-
-export const useFetch = (url) => {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const abortController = new AbortController();
-    const signal = abortController.signal;
-
-    const fetchData = async () => {
-      setLoading(true);
-
-      try {
-        const res = await fetch(url);
-
-        if (!res.ok) {
-          let err = new Error("Error en la petición Fetch");
-          err.status = res.status || "00";
-          err.statusText = res.statusText || "Ocurrió un error";
-          throw err;
-        }
-
-        const json = await res.json();
-
-        if (!signal.aborted) {
-          setData(json);
-          setError(null);
-        }
-      } catch (error) {
-        if (!signal.aborted) {
-          setData(null);
-          setError(error);
-        }
-      } finally {
-        if (!signal.aborted) {
-          setLoading(false);
-        }
-      }
+export const helpHttp = () => {
+  const customFetch = (endpoint, options) => {
+    const defaultHeader = {
+      accept: "application/json",
     };
 
-    fetchData();
+    const controller = new AbortController();
+    options.signal = controller.signal;
 
-    return () => abortController.abort();
-  }, [url]);
+    options.method = options.method || "GET";
+    options.headers = options.headers
+      ? { ...defaultHeader, ...options.headers }
+      : defaultHeader;
 
-  return { data, error, loading };
+    options.body = JSON.stringify(options.body) || false;
+    if (!options.body) delete options.body;
+
+    //console.log(options);
+    setTimeout(() => controller.abort(), 3000); //Por si el server esta caido
+
+    return fetch(endpoint, options)
+      .then((res) =>
+        res.ok
+          ? res.json()
+          : Promise.reject({
+              err: true,
+              status: res.status || "00",
+              statusText: res.statusText || "Ocurrió un error",
+            })
+      )
+      .catch((err) => err);
+  };
+
+  const get = (url, options = {}) => customFetch(url, options);
+
+  const post = (url, options) => {
+    options.method = "POST";
+    return customFetch(url, options);
+  };
+
+  const put = (url, options) => {
+    options.method = "PUT";
+    return customFetch(url, options);
+  };
+
+  const del = (url, options) => {
+    options.method = "DELETE";
+    return customFetch(url, options);
+  };
+
+  return {
+    get,
+    post,
+    put,
+    del,
+  };
 };

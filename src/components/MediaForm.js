@@ -1,6 +1,10 @@
-import { useFetch } from "../hooks/useFetch";
+import React, { useState } from "react";
 
-export default function SearchForm() {
+const initialUrl = "";
+
+const MediaForm = ({ handleSearch }) => {
+  const [url, setUrl] = useState(initialUrl);
+
   let types = [];
   let genres = [];
 
@@ -32,17 +36,20 @@ export default function SearchForm() {
     genres.forEach((e) => {
       gf = gf + e + ",";
     });
+
     const genresFilter = gf.substring(0, gf.length - 1);
 
     const minVotes = document.getElementById("num-votes").value;
 
     const url = `${process.env.REACT_APP_API_URL}?title_type=${typesFilter}&genres=${genresFilter}&sort=user_rating,desc&num_votes=${minVotes},999999999`;
-    console.log(url);
 
     //Test
     fetch(url)
       .then((res) => (res.ok ? res.json() : Promise.reject()))
       .then((json) => console.log(json));
+
+    handleSearch(url);
+    setUrl(initialUrl);
   };
 
   const popText = (e) => {
@@ -394,4 +401,6 @@ export default function SearchForm() {
       </section>
     </div>
   );
-}
+};
+
+export default MediaForm;

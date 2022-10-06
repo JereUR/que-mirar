@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 
 export const Loader = () => {
   return (
@@ -78,3 +78,20 @@ export const Loader = () => {
     </svg>
   );
 };
+ */
+
+import React from "react";
+import "./Loader.css";
+
+const Loader = () => {
+  return (
+    <div className="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  );
+};
+
+export default Loader;

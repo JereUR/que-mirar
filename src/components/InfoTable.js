@@ -1,7 +1,7 @@
 import React from "react";
-import CrudTableRow from "./CrudTableRow";
+import InfoTableRow from "./InfoTableRow";
 
-const CrudTable = ({ data, setDataToEdit, deleteData }) => {
+const InfoTable = ({ data }) => {
   return (
     <div>
       <h3>Resultados</h3>
@@ -11,16 +11,16 @@ const CrudTable = ({ data, setDataToEdit, deleteData }) => {
             <th>Rating</th>
             <th>Portada</th>
             <th>Nombre</th>
-            <th>Género</th>
-            <th>Tipo</th>
+            <th>Género/s</th>
+            <th>Año</th>
             <th>Descripción</th>
-            <th>URL</th>
-            <th>Total de reviews</th>
+            <th>Total de votos</th>
+            <th>Elenco principal</th>
           </tr>
         </thread>
         <tbody>
           {data.length > 0 ? (
-            data.map((el) => <CrudTableRow el={el}></CrudTableRow>)
+            data.map((el) => <InfoTableRow el={el}></InfoTableRow>)
           ) : (
             <tr>
               <td colSpan="3">Sin Datos</td>
@@ -32,4 +32,4 @@ const CrudTable = ({ data, setDataToEdit, deleteData }) => {
   );
 };
 
-export default CrudTable;
+export default InfoTable;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const CrudTableRow = ({ el }) => {
+const InfoTableRow = ({ el }) => {
   let { rating, photo, name, genres, types, description, url, reviews } = el;
 
   return (
@@ -19,4 +19,4 @@ const CrudTableRow = ({ el }) => {
   );
 };
 
-export default CrudTableRow;
+export default InfoTableRow;
