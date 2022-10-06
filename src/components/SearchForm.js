@@ -37,6 +37,7 @@ export default function SearchForm() {
     const minVotes = document.getElementById("num-votes").value;
 
     const url = `${process.env.REACT_APP_API_URL}?title_type=${typesFilter}&genres=${genresFilter}&sort=user_rating,desc&num_votes=${minVotes},999999999`;
+    console.log(url);
 
     //Test
     fetch(url)
@@ -67,16 +68,16 @@ export default function SearchForm() {
               id="type-checkbox1"
               onChange={typesHandleChecked}
             />
-            <label for="type-checkbox1">Pelicula</label>
+            <label htmlFor="type-checkbox1">Pelicula</label>
           </div>
           <div className="type-slc">
             <input
               type="checkbox"
-              value="tv_serie"
+              value="tv_series"
               id="type-checkbox2"
               onChange={typesHandleChecked}
             />
-            <label for="type-checkbox2">Serie</label>
+            <label htmlFor="type-checkbox2">Serie</label>
           </div>
           <div className="type-slc">
             <input
@@ -85,7 +86,7 @@ export default function SearchForm() {
               id="type-checkbox3"
               onChange={typesHandleChecked}
             />
-            <label for="type-checkbox3">Pelicula de TV</label>
+            <label htmlFor="type-checkbox3">Pelicula de TV</label>
           </div>
           <div className="type-slc">
             <input
@@ -94,16 +95,16 @@ export default function SearchForm() {
               id="type-checkbox4"
               onChange={typesHandleChecked}
             />
-            <label for="type-checkbox4">Especial de TV</label>
+            <label htmlFor="type-checkbox4">Especial de TV</label>
           </div>
           <div className="type-slc">
             <input
               type="checkbox"
-              value="mini-serie"
+              value="tv_miniseries"
               id="type-checkbox5"
               onChange={typesHandleChecked}
             />
-            <label for="type-checkbox5">Mini-Serie</label>
+            <label htmlFor="type-checkbox5">Mini-Serie</label>
           </div>
           <div className="type-slc">
             <input
@@ -112,16 +113,16 @@ export default function SearchForm() {
               id="type-checkbox6"
               onChange={typesHandleChecked}
             />
-            <label for="type-checkbox6">Documental</label>
+            <label htmlFor="type-checkbox6">Documental</label>
           </div>
           <div className="type-slc">
             <input
               type="checkbox"
-              value="short_film"
+              value="short"
               id="type-checkbox7"
               onChange={typesHandleChecked}
             />
-            <label for="type-checkbox7">Cortometraje</label>
+            <label htmlFor="type-checkbox7">Cortometraje</label>
           </div>
         </form>
         <form id="genre">
@@ -136,7 +137,7 @@ export default function SearchForm() {
               id="genre-checkbox1"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox1">Acción</label>
+            <label htmlFor="genre-checkbox1">Acción</label>
           </div>
           <div className="genre-slc">
             <input
@@ -145,7 +146,7 @@ export default function SearchForm() {
               id="genre-checkbox2"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox2">Aventura</label>
+            <label htmlFor="genre-checkbox2">Aventura</label>
           </div>
           <div className="genre-slc">
             <input
@@ -154,7 +155,7 @@ export default function SearchForm() {
               id="genre-checkbox3"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox3">Animación</label>
+            <label htmlFor="genre-checkbox3">Animación</label>
           </div>
           <div className="genre-slc">
             <input
@@ -163,7 +164,7 @@ export default function SearchForm() {
               id="genre-checkbox4"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox4">Biografía</label>
+            <label htmlFor="genre-checkbox4">Biografía</label>
           </div>
           <div className="genre-slc">
             <input
@@ -172,7 +173,7 @@ export default function SearchForm() {
               id="genre-checkbox5"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox5">Comedia</label>
+            <label htmlFor="genre-checkbox5">Comedia</label>
           </div>
           <div className="genre-slc">
             <input
@@ -181,7 +182,7 @@ export default function SearchForm() {
               id="genre-checkbox6"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox6">Crimen</label>
+            <label htmlFor="genre-checkbox6">Crimen</label>
           </div>
           <div className="genre-slc">
             <input
@@ -190,7 +191,7 @@ export default function SearchForm() {
               id="genre-checkbox7"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox7">Documental</label>
+            <label htmlFor="genre-checkbox7">Documental</label>
           </div>
           <div className="genre-slc">
             <input
@@ -199,7 +200,7 @@ export default function SearchForm() {
               id="genre-checkbox8"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox8">Drama</label>
+            <label htmlFor="genre-checkbox8">Drama</label>
           </div>
           <div className="genre-slc">
             <input
@@ -208,131 +209,158 @@ export default function SearchForm() {
               id="genre-checkbox9"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox9">Familiar</label>
+            <label htmlFor="genre-checkbox9">Familiar</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
-              value="film-noir"
+              value="fantasy"
               id="genre-checkbox10"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox10">Cine Negro</label>
+            <label htmlFor="genre-checkbox10">Fantasia</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
-              value="game-show"
+              value="film_noir"
               id="genre-checkbox11"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox11">Programa de Juegos</label>
+            <label htmlFor="genre-checkbox11">Cine Negro</label>
+          </div>
+          <div className="genre-slc">
+            <input
+              type="checkbox"
+              value="game_show"
+              id="genre-checkbox12"
+              onChange={genresHandleChecked}
+            />
+            <label htmlFor="genre-checkbox12">Programa de Juegos</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
               value="history"
-              id="genre-checkbox12"
+              id="genre-checkbox13"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox12">Historia</label>
+            <label htmlFor="genre-checkbox13">Historia</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
               value="horror"
-              id="genre-checkbox13"
+              id="genre-checkbox14"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox13">Terror</label>
+            <label htmlFor="genre-checkbox14">Terror</label>
+          </div>
+          <div className="genre-slc">
+            <input
+              type="checkbox"
+              value="music"
+              id="genre-checkbox15"
+              onChange={genresHandleChecked}
+            />
+            <label htmlFor="genre-checkbox15">Musica</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
               value="musical"
-              id="genre-checkbox14"
+              id="genre-checkbox16"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox14">Musical</label>
+            <label htmlFor="genre-checkbox16">Musical</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
               value="mystery"
-              id="genre-checkbox15"
+              id="genre-checkbox17"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox15">Misterio</label>
+            <label htmlFor="genre-checkbox17">Misterio</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
-              value="reality-tv"
-              id="genre-checkbox16"
+              value="reality_tv"
+              id="genre-checkbox18"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox16">Reality</label>
+            <label htmlFor="genre-checkbox18">Reality</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
               value="romance"
-              id="genre-checkbox17"
+              id="genre-checkbox19"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox17">Romántica</label>
+            <label htmlFor="genre-checkbox19">Romántica</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
-              value="sci-fi"
-              id="genre-checkbox18"
+              value="sci_fi"
+              id="genre-checkbox20"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox18">Ciencia Ficción</label>
+            <label htmlFor="genre-checkbox20">Ciencia Ficción</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
               value="sport"
-              id="genre-checkbox19"
+              id="genre-checkbox21"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox19">Deporte</label>
+            <label htmlFor="genre-checkbox21">Deporte</label>
+          </div>
+          <div className="genre-slc">
+            <input
+              type="checkbox"
+              value="talk_show"
+              id="genre-checkbox22"
+              onChange={genresHandleChecked}
+            />
+            <label htmlFor="genre-checkbox22">Talk-Show</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
               value="thriller"
-              id="genre-checkbox20"
+              id="genre-checkbox23"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox20">Thriller</label>
+            <label htmlFor="genre-checkbox23">Thriller</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
               value="war"
-              id="genre-checkbox21"
+              id="genre-checkbox24"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox21">Bélica</label>
+            <label htmlFor="genre-checkbox24">Bélica</label>
           </div>
           <div className="genre-slc">
             <input
               type="checkbox"
               value="western"
-              id="genre-checkbox22"
+              id="genre-checkbox24"
               onChange={genresHandleChecked}
             />
-            <label for="genre-checkbox22">Western</label>
+            <label htmlFor="genre-checkbox24">Western</label>
           </div>
         </form>
       </div>
       <div className="votes-section">
-        <select id="num-votes" onfocus="3">
-          <option value="1000" selected>
-            Seleccione mínima cantidad de reseñas (1000 por defecto)
+        <select id="num-votes">
+          <option defaultValue="5000" value="5000">
+            Seleccione mínima cantidad de reseñas (5000 por defecto)
           </option>
           <option value="0">0</option>
           <option value="250">250</option>
@@ -356,7 +384,7 @@ export default function SearchForm() {
           mostrados en cuanto a su calidad.
         </h3>
       </div>
-      <section class="btn-section">
+      <section className="btn-section">
         <input
           type="submit"
           id="btn-submit"

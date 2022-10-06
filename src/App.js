@@ -12,7 +12,7 @@ function App() {
         <SearchForm></SearchForm>
       </section>
       <hr />
-      <section className="loader none">
+      <section className="loader">
         <Loader></Loader>
       </section>
       <Footer></Footer>
