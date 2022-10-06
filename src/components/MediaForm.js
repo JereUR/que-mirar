@@ -41,12 +41,18 @@ const MediaForm = ({ handleSearch }) => {
 
     const minVotes = document.getElementById("num-votes").value;
 
-    const url = `${process.env.REACT_APP_API_URL}?title_type=${typesFilter}&genres=${genresFilter}&sort=user_rating,desc&num_votes=${minVotes},999999999`;
+    /* const url = `${process.env.REACT_APP_API_URL}?title_type=${typesFilter}&genres=${genresFilter}&sort=user_rating,desc&num_votes=${minVotes},999999999`;
 
-    //Test
+     //Test
     fetch(url)
       .then((res) => (res.ok ? res.json() : Promise.reject()))
-      .then((json) => console.log(json));
+      .then((json) => console.log(json)); */
+
+    const url = {
+      types: typesFilter,
+      genres: genresFilter,
+      minVotes: minVotes,
+    };
 
     handleSearch(url);
     setUrl(initialUrl);

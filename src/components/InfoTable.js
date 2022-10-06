@@ -2,6 +2,8 @@ import React from "react";
 import InfoTableRow from "./InfoTableRow";
 
 const InfoTable = ({ data }) => {
+  console.log(data);
+
   return (
     <div>
       <h3>Resultados</h3>
@@ -19,13 +21,14 @@ const InfoTable = ({ data }) => {
           </tr>
         </thread>
         <tbody>
-          {data.length > 0 ? (
-            data.map((el) => <InfoTableRow el={el}></InfoTableRow>)
+          <p>test</p>
+          {/* {data.results > 0 ? (
+            data.results.forEach((el) => <InfoTableRow el={el}></InfoTableRow>)
           ) : (
             <tr>
               <td colSpan="3">Sin Datos</td>
             </tr>
-          )}
+          )} */}
         </tbody>
       </table>
     </div>
