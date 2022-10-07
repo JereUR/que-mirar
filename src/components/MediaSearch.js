@@ -6,7 +6,7 @@ import MediaForm from "./MediaForm";
 
 export default function MediaSearch() {
   const [search, setSearch] = useState(null);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -21,10 +21,15 @@ export default function MediaSearch() {
 
       const [data] = await Promise.all([helpHttp().get(url)]);
 
+      /* let res = await fetch(url),
+        json = await res.json(); */
+
       /* console.log(data); */
 
-      setData(data);
-      setLoading(false);
+      setData(data.results);
+      if (data != null) {
+        setLoading(false);
+      }
     };
 
     fetchData();

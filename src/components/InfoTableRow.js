@@ -1,19 +1,32 @@
 import React from "react";
 
 const InfoTableRow = ({ el }) => {
-  let { rating, photo, name, genres, types, description, url, reviews } = el;
+  let {
+    imDbRating,
+    image,
+    title,
+    genres,
+    description,
+    plot,
+    imDbRatingVotes,
+    stars,
+  } = el;
 
   return (
     <div>
       <tr>
-        <td>{el.rating}</td>
-        <td>{el.photo}</td>
-        <td>{el.name}</td>
-        <td>{el.genres}</td>
-        <td>{el.types}</td>
-        <td>{el.description}</td>
-        <td>{el.url}</td>
-        <td>{el.reviews}</td>
+        <td>{imDbRating}</td>
+        <td>
+          <figure>
+            <img className="front-page" src={image} alt="front-page" />
+          </figure>
+        </td>
+        <td>{title}</td>
+        <td>{genres}</td>
+        <td>{description}</td>
+        <td>{plot}</td>
+        <td>{imDbRatingVotes}</td>
+        <td>{stars}</td>
       </tr>
     </div>
   );

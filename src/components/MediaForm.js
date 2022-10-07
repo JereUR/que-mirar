@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-const initialUrl = "";
+const initialParams = null;
 
 const MediaForm = ({ handleSearch }) => {
-  const [url, setUrl] = useState(initialUrl);
+  const [urlParams, setUrlParams] = useState(initialParams);
 
   let types = [];
   let genres = [];
@@ -24,7 +24,17 @@ const MediaForm = ({ handleSearch }) => {
     }
   };
 
-  const handleButton = (e) => {
+  const popText = (e) => {
+    if (document.getElementById("popup-text").classList.length === 0) {
+      document.getElementById("popup-text").classList.add("none");
+    } else {
+      document.getElementById("popup-text").classList.remove("none");
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     let tf = "";
     let gf = "";
 
@@ -41,29 +51,16 @@ const MediaForm = ({ handleSearch }) => {
 
     const minVotes = document.getElementById("num-votes").value;
 
-    /* const url = `${process.env.REACT_APP_API_URL}?title_type=${typesFilter}&genres=${genresFilter}&sort=user_rating,desc&num_votes=${minVotes},999999999`;
-
-     //Test
-    fetch(url)
-      .then((res) => (res.ok ? res.json() : Promise.reject()))
-      .then((json) => console.log(json)); */
-
-    const url = {
+    const info = {
       types: typesFilter,
       genres: genresFilter,
       minVotes: minVotes,
     };
 
-    handleSearch(url);
-    setUrl(initialUrl);
-  };
+    setUrlParams(info);
 
-  const popText = (e) => {
-    if (document.getElementById("popup-text").classList.length === 0) {
-      document.getElementById("popup-text").classList.add("none");
-    } else {
-      document.getElementById("popup-text").classList.remove("none");
-    }
+    handleSearch(info);
+    setUrlParams(initialParams);
   };
 
   return (
@@ -398,12 +395,9 @@ const MediaForm = ({ handleSearch }) => {
         </h3>
       </div>
       <section className="btn-section">
-        <input
-          type="submit"
-          id="btn-submit"
-          value="QUÉ MIRAR  >>>"
-          onClick={handleButton}
-        ></input>
+        <form onSubmit={handleSubmit}>
+          <input type="submit" id="btn-submit" value="QUÉ MIRAR  >>>"></input>
+        </form>
       </section>
     </div>
   );
