@@ -58,9 +58,9 @@ const MediaForm = ({ handleSearch }) => {
     };
 
     setUrlParams(info);
-
     handleSearch(info);
     setUrlParams(initialParams);
+    /* cleanForm(); */
   };
 
   return (
