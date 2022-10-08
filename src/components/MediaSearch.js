@@ -13,9 +13,9 @@ export default function MediaSearch() {
     if (search === null) return;
 
     const fetchData = async () => {
-      const { types, genres, minVotes } = search;
+      const { types, genres, minVotes, top } = search;
 
-      let url = `${process.env.REACT_APP_API_URL}?title_type=${types}&genres=${genres}&sort=user_rating,desc&num_votes=${minVotes},999999999`;
+      let url = `${process.env.REACT_APP_API_URL}?title_type=${types}&genres=${genres}&sort=user_rating,desc&num_votes=${minVotes},999999999&count=${top}`;
 
       setLoading(true);
 
@@ -41,8 +41,9 @@ export default function MediaSearch() {
 
   return (
     <div>
-      <article>
+      <article className="grid-1-2">
         <MediaForm handleSearch={handleSearch} />
+        <hr className="hr-search" />
         {loading && <Loader />}
         {search && !loading && <InfoTable data={data} />}
       </article>

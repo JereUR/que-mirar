@@ -24,12 +24,13 @@ const MediaForm = ({ handleSearch }) => {
     }
   };
 
-  const popText = (e) => {
-    if (document.getElementById("popup-text").classList.length === 0) {
-      document.getElementById("popup-text").classList.add("none");
-    } else {
-      document.getElementById("popup-text").classList.remove("none");
-    }
+  const popText = () => {
+    document.getElementById("popup-text").classList.toggle("none");
+  };
+
+  const cleanForm = () => {
+    document.getElementById("types").reset();
+    document.getElementById("genres").reset();
   };
 
   const handleSubmit = (e) => {
@@ -51,16 +52,19 @@ const MediaForm = ({ handleSearch }) => {
 
     const minVotes = document.getElementById("num-votes").value;
 
+    const top = document.getElementById("top-number").value;
+
     const info = {
       types: typesFilter,
       genres: genresFilter,
       minVotes: minVotes,
+      top: top,
     };
 
     setUrlParams(info);
     handleSearch(info);
     setUrlParams(initialParams);
-    /* cleanForm(); */
+    cleanForm();
   };
 
   return (
@@ -389,10 +393,22 @@ const MediaForm = ({ handleSearch }) => {
         <p className="clarification" onClick={popText}>
           ☟
         </p>
+        <hr />
         <h3 id="popup-text" className="none">
           Cuanto mayor sea la cantidad mínima, más confiable serán los títulos
           mostrados en cuanto a su calidad.
         </h3>
+      </div>
+      <div className="top-section">
+        <select id="top-number">
+          <option defaultValue="50" value="50">
+            Top 50
+          </option>
+          <option value="100">Top 100</option>
+          <option value="150">Top 150</option>
+          <option value="200">Top 200</option>
+          <option value="250">Top 250</option>
+        </select>
       </div>
       <section className="btn-section">
         <form onSubmit={handleSubmit}>

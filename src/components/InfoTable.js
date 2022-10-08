@@ -2,12 +2,13 @@ import React from "react";
 import InfoTableRow from "./InfoTableRow";
 
 const InfoTable = ({ data }) => {
+  let id = 1;
   return (
     <div>
-      <h3>Resultados</h3>
-      <table>
-        <thread>
+      <table className="table table-bordered">
+        <thead>
           <tr>
+            <th>#</th>
             <th>Rating</th>
             <th>Portada</th>
             <th>Nombre</th>
@@ -17,13 +18,13 @@ const InfoTable = ({ data }) => {
             <th>Total de votos</th>
             <th>Elenco principal</th>
           </tr>
-        </thread>
+        </thead>
         <tbody>
           {data.length > 0 ? (
-            data.map((el) => <InfoTableRow el={el}></InfoTableRow>)
+            data.map((el) => <InfoTableRow el={el} id={id++}></InfoTableRow>)
           ) : (
             <tr>
-              <td colSpan="3">Sin Datos</td>
+              <td colSpan="8">Sin Datos</td>
             </tr>
           )}
         </tbody>

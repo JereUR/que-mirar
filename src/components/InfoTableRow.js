@@ -1,6 +1,6 @@
 import React from "react";
 
-const InfoTableRow = ({ el }) => {
+const InfoTableRow = ({ el, id }) => {
   let {
     imDbRating,
     image,
@@ -13,22 +13,23 @@ const InfoTableRow = ({ el }) => {
   } = el;
 
   return (
-    <div>
-      <tr>
-        <td>{imDbRating}</td>
-        <td>
-          <figure>
-            <img className="front-page" src={image} alt="front-page" />
-          </figure>
-        </td>
-        <td>{title}</td>
-        <td>{genres}</td>
-        <td>{description}</td>
-        <td>{plot}</td>
-        <td>{imDbRatingVotes}</td>
-        <td>{stars}</td>
-      </tr>
-    </div>
+    <tr className="table-row">
+      <td className="id-data">
+        <p>{id}</p>
+      </td>
+      <td className="rating-data">⭐{imDbRating}</td>
+      <td>
+        <figure>
+          <img className="front-page" src={image} alt="front-page" />
+        </figure>
+      </td>
+      <td>{title}</td>
+      <td>{genres}</td>
+      <td>{description}</td>
+      <td>{plot}</td>
+      <td>{imDbRatingVotes}</td>
+      <td>{stars}</td>
+    </tr>
   );
 };
 

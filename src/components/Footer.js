@@ -1,4 +1,6 @@
 import React from "react";
+import imdbImg from "../assets/imdb-api.png";
+import reactImg from "../assets/react-logo.png";
 
 export const Footer = () => {
   return (
@@ -9,11 +11,10 @@ export const Footer = () => {
         </p>
       </div>
       <div className="footer-powered">
-        <p>Powered by</p>
-        <img
-          src="https://cdn.discordapp.com/attachments/894702938386210896/997741349849804871/react-logo.png"
-          alt="react-logo"
-        />
+        <p className="footer-text">Powered by</p>
+        <img src={reactImg} alt="react-logo" />
+        <p className="footer-text">&</p>
+        <img className="footer-imdb" src={imdbImg} alt="imdb-logo" />
       </div>
     </footer>
   );
