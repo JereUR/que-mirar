@@ -2,7 +2,7 @@ import React from "react";
 import InfoTableRow from "./InfoTableRow";
 
 const InfoTable = ({ data }) => {
-  let id = 1;
+  let num = 1;
   return (
     <div>
       <table className="table table-bordered">
@@ -21,7 +21,7 @@ const InfoTable = ({ data }) => {
         </thead>
         <tbody>
           {data.length > 0 ? (
-            data.map((el) => <InfoTableRow el={el} id={id++}></InfoTableRow>)
+            data.map((el) => <InfoTableRow el={el} num={num++}></InfoTableRow>)
           ) : (
             <tr>
               <td colSpan="8">Sin Datos</td>

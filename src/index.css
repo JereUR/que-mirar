@@ -178,13 +178,13 @@ html {
   padding-bottom: 1rem;
 }
 
-.id-data {
-  font-weight: bold;
-  color: #1c4fda;
-}
-
 .none {
   display: none;
+}
+
+.num-data {
+  font-weight: bold;
+  color: #1c4fda;
 }
 
 #num-votes {
