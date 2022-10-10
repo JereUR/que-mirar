@@ -26,11 +26,38 @@ const MediaForm = ({ handleSearch }) => {
 
   const popText = () => {
     document.getElementById("popup-text").classList.toggle("none");
+
+    var finger = document.querySelector(".popup-container").querySelector("p");
+
+    if (!document.getElementById("popup-text").classList.contains("none")) {
+      finger.style.transform = "rotate(-90deg)";
+    } else {
+      finger.style.transform = "rotate(180deg)";
+    }
   };
 
   const cleanForm = () => {
-    document.getElementById("types").reset();
-    document.getElementById("genres").reset();
+    const typesOption = document
+      .getElementById("type")
+      .querySelectorAll(".type-slc");
+    for (let i = 1; i < typesOption.length + 1; i++) {
+      if (document.getElementById(`type-checkbox${i}`).checked) {
+        var inputType = document.getElementById(`type-checkbox${i}`);
+
+        inputType.checked = false;
+      }
+    }
+
+    const genresOption = document
+      .getElementById("genre")
+      .querySelectorAll(".genre-slc");
+    for (let i = 1; i < genresOption.length + 1; i++) {
+      if (document.getElementById(`genre-checkbox${i}`).checked) {
+        var inputGenre = document.getElementById(`genre-checkbox${i}`);
+
+        inputGenre.checked = false;
+      }
+    }
   };
 
   const handleSubmit = (e) => {
@@ -136,7 +163,7 @@ const MediaForm = ({ handleSearch }) => {
               id="type-checkbox7"
               onChange={typesHandleChecked}
             />
-            <label htmlFor="type-checkbox7">Cortometraje</label>
+            <label htmlFor="type-checkbox7">Cortometraie</label>
           </div>
         </form>
         <form id="genre">
@@ -250,7 +277,7 @@ const MediaForm = ({ handleSearch }) => {
               id="genre-checkbox12"
               onChange={genresHandleChecked}
             />
-            <label htmlFor="genre-checkbox12">Programa de Juegos</label>
+            <label htmlFor="genre-checkbox12">Programa de iuegos</label>
           </div>
           <div className="genre-slc">
             <input
@@ -364,10 +391,10 @@ const MediaForm = ({ handleSearch }) => {
             <input
               type="checkbox"
               value="western"
-              id="genre-checkbox24"
+              id="genre-checkbox25"
               onChange={genresHandleChecked}
             />
-            <label htmlFor="genre-checkbox24">Western</label>
+            <label htmlFor="genre-checkbox25">Western</label>
           </div>
         </form>
       </div>

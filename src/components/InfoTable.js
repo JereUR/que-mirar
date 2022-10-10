@@ -21,7 +21,9 @@ const InfoTable = ({ data }) => {
         </thead>
         <tbody>
           {data.length > 0 ? (
-            data.map((el) => <InfoTableRow el={el} num={num++}></InfoTableRow>)
+            data.map((el) => (
+              <InfoTableRow key={el.id} el={el} num={num++}></InfoTableRow>
+            ))
           ) : (
             <tr>
               <td colSpan="8">Sin Datos</td>

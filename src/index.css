@@ -228,6 +228,7 @@ html {
 
 .popup-container .right > p {
   transform: rotate(-90deg);
+  transition: all 0.4s ease-out;
 }
 
 .selection {
@@ -361,6 +362,20 @@ label {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .selection {
+    display: grid;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    margin: 1rem;
+  }
+
+  .container {
+    display: grid;
+  }
+}
+
 /* CheckBox and labels styles */
 
 label {
@@ -454,7 +469,7 @@ input[type="checkbox"]:checked:disabled + label:before {
   position: relative;
   width: 80px;
   height: 80px;
-  left: 50%;
+  left: 48%;
 }
 .lds-ring div {
   box-sizing: border-box;

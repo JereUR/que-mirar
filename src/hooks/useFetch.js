@@ -16,7 +16,7 @@ export const helpHttp = () => {
     if (!options.body) delete options.body;
 
     //console.log(options);
-    setTimeout(() => controller.abort(), 3000); //Por si el server esta caido
+    setTimeout(() => controller.abort(), 3000); //If the server is down
 
     return fetch(endpoint, options)
       .then((res) =>
