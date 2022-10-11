@@ -109,7 +109,7 @@ const MediaForm = ({ handleSearch }) => {
               id="type-checkbox1"
               onChange={typesHandleChecked}
             />
-            <label htmlFor="type-checkbox1">Pelicula</label>
+            <label htmlFor="type-checkbox1">Película</label>
           </div>
           <div className="type-slc">
             <input
@@ -127,7 +127,7 @@ const MediaForm = ({ handleSearch }) => {
               id="type-checkbox3"
               onChange={typesHandleChecked}
             />
-            <label htmlFor="type-checkbox3">Pelicula de TV</label>
+            <label htmlFor="type-checkbox3">Película de TV</label>
           </div>
           <div className="type-slc">
             <input
@@ -163,7 +163,7 @@ const MediaForm = ({ handleSearch }) => {
               id="type-checkbox7"
               onChange={typesHandleChecked}
             />
-            <label htmlFor="type-checkbox7">Cortometraie</label>
+            <label htmlFor="type-checkbox7">Cortometraje</label>
           </div>
         </form>
         <form id="genre">
@@ -259,7 +259,7 @@ const MediaForm = ({ handleSearch }) => {
               id="genre-checkbox10"
               onChange={genresHandleChecked}
             />
-            <label htmlFor="genre-checkbox10">Fantasia</label>
+            <label htmlFor="genre-checkbox10">Fantasía</label>
           </div>
           <div className="genre-slc">
             <input
@@ -304,7 +304,7 @@ const MediaForm = ({ handleSearch }) => {
               id="genre-checkbox15"
               onChange={genresHandleChecked}
             />
-            <label htmlFor="genre-checkbox15">Musica</label>
+            <label htmlFor="genre-checkbox15">Música</label>
           </div>
           <div className="genre-slc">
             <input
