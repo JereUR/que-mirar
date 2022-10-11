@@ -398,6 +398,10 @@ const MediaForm = ({ handleSearch }) => {
           </div>
         </form>
       </div>
+      <h1 className="extra-options">
+        <i>OPCIONES EXTRAS</i>
+      </h1>
+      <hr />
       <div className="votes-section">
         <select id="num-votes">
           <option defaultValue="5000" value="5000">
@@ -437,6 +441,7 @@ const MediaForm = ({ handleSearch }) => {
           <option value="250">Top 250</option>
         </select>
       </div>
+      <hr />
       <section className="btn-section">
         <form onSubmit={handleSubmit}>
           <input type="submit" id="btn-submit" value="QUÉ MIRAR  >>>"></input>

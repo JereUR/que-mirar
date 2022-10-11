@@ -6,7 +6,7 @@ import linkedin from "../assets/linkedin.png";
 export const Header = () => {
   return (
     <header className="header">
-      <section class="social">
+      <div class="social">
         <a
           href="https://github.com/JereUR"
           target="_blank"
@@ -21,13 +21,13 @@ export const Header = () => {
         >
           <img className="social-icon" src={linkedin} alt="linkedin" />
         </a>
-      </section>
-      <section className="header-content container">
-        <article className="logo">
+      </div>
+      <div className="header-content container">
+        <article className="logo-container">
           <img className="logo-icon" src={logo} alt="logo" />
-          <h1>QueMirar</h1>
         </article>
-      </section>
+        <h1>QueMirar</h1>
+      </div>
     </header>
   );
 };

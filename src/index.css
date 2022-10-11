@@ -70,6 +70,13 @@ html {
 
 .container {
   max-width: 100%;
+  padding: 0;
+}
+
+.extra-options {
+  text-align: center;
+  background-color: rgb(212, 220, 226);
+  margin: 2rem;
 }
 
 .footer {
@@ -81,14 +88,15 @@ html {
   background-color: #46a3ce;
   font-size: 12px;
   max-width: 100%;
-  border: thin solid #000;
+  /* border: thin solid #000; */
   height: auto;
-  box-shadow: 0 0 1rem 0 #121212;
-  border-radius: 0.25rem 0.25rem 0 0;
+  /* box-shadow: 0 0 1rem 0 #121212;
+  border-radius: 0.25rem 0.25rem 0 0; */
 }
 
 .footer-created {
-  padding: 1rem;
+  margin-top: auto;
+  padding-left: 1rem;
 }
 
 .footer img {
@@ -142,20 +150,20 @@ html {
 }
 
 .header {
-  text-align: center;
+  display: block;
   top: 0;
   z-index: 997;
   padding: 10px;
   background-color: #46a3ce;
-  max-width: 100%;
-  border: thin solid #000;
-  height: auto;
-  box-shadow: 0 0.3rem 0 0 #121212;
-  border-radius: 0 0.25rem 0.25rem 0;
+  width: 100%;
+  /* border: thin solid #000; */
+  /* box-shadow: 0 0.3rem 0 0 #121212; */
+  /* border-radius: 0 0.25rem 0.25rem 0; */
 }
 
 .header h1 {
-  font-size: 4rem;
+  text-align: center;
+  font-size: 3rem;
   padding: 5px;
   width: 100%;
   background-color: rgb(35, 34, 34);
@@ -169,10 +177,16 @@ html {
   padding-bottom: 1rem;
 }
 
+.logo-container {
+  width: 100%;
+}
+
 .logo-icon {
-  width: 25vw;
-  height: auto;
-  margin: 1rem;
+  display: block;
+  width: 20vw;
+  margin: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
   border-radius: 0.75rem;
   border: thin solid #000;
   box-shadow: 0 0.2rem 0 0.2rem rgb(37, 36, 36);
@@ -239,6 +253,8 @@ html {
 }
 
 .social {
+  width: 100%;
+  float: left;
   display: flex;
   justify-content: end;
 }
@@ -326,6 +342,7 @@ tr > th {
 
 .top-section {
   margin: 1rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
 }
