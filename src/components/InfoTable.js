@@ -9,9 +9,9 @@ const InfoTable = ({ data }) => {
         <thead>
           <tr>
             <th>#</th>
-            <th>Rating</th>
+            <th>Calificación</th>
             <th>Portada</th>
-            <th>Nombre</th>
+            <th>Título</th>
             <th>Género/s</th>
             <th>Año</th>
             <th>Descripción</th>

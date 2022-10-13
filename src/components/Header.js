@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../assets/Logo.png";
 import github from "../assets/github.png";
 import linkedin from "../assets/linkedin.png";
 
@@ -23,10 +22,13 @@ export const Header = () => {
         </a>
       </div>
       <div className="header-content container">
-        <article className="logo-container">
+        {/* <article className="logo-container">
           <img className="logo-icon" src={logo} alt="logo" />
-        </article>
+        </article> */}
         <h1>QueMirar</h1>
+        <p>
+          <i>Encontrá algo para maratonear... </i>
+        </p>
       </div>
     </header>
   );

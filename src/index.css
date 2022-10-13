@@ -3,6 +3,7 @@ body {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
 }
 
 code {
@@ -11,6 +12,8 @@ code {
 
 :root {
   --main-font: "Montserrat", sans-serif;
+  --main-color: #d35308;
+  --words-color: rgb(235, 220, 220);
 }
 
 html {
@@ -18,7 +21,7 @@ html {
   font-family: var(--main-font);
   font-size: 10px;
   scroll-behavior: smooth;
-  background-color: rgb(255, 255, 255);
+  background-color: #000;
   width: auto;
   margin: 0;
   padding: 0;
@@ -45,9 +48,10 @@ html {
   float: center;
   width: 80vw;
   border-radius: 0.75rem;
-  background-color: #46a3ce;
+  background-color: var(--main-color);
+  opacity: 0.8;
   border: none;
-  color: #000;
+  color: var(--words-color);
   font-size: 2rem;
   font-weight: bold;
   padding: 2rem;
@@ -75,8 +79,10 @@ html {
 
 .extra-options {
   text-align: center;
-  background-color: rgb(212, 220, 226);
+  background-color: var(--main-color);
   margin: 2rem;
+  color: var(--words-color);
+  border-radius: 100%;
 }
 
 .footer {
@@ -85,18 +91,23 @@ html {
   height: auto;
   z-index: 997;
   margin-top: 10px;
-  background-color: #46a3ce;
   font-size: 12px;
   max-width: 100%;
-  /* border: thin solid #000; */
   height: auto;
-  /* box-shadow: 0 0 1rem 0 #121212;
-  border-radius: 0.25rem 0.25rem 0 0; */
+  background-image: linear-gradient(
+    to top,
+    #d35308,
+    #a53523,
+    #702226,
+    #3a161c,
+    #000000
+  );
 }
 
 .footer-created {
   margin-top: auto;
   padding-left: 1rem;
+  color: var(--words-color);
 }
 
 .footer img {
@@ -112,6 +123,7 @@ html {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  color: var(--words-color);
 }
 
 .footer-text {
@@ -156,23 +168,37 @@ html {
   padding: 10px;
   background-color: #46a3ce;
   width: 100%;
-  /* border: thin solid #000; */
-  /* box-shadow: 0 0.3rem 0 0 #121212; */
-  /* border-radius: 0 0.25rem 0.25rem 0; */
+  background-image: linear-gradient(
+    to bottom,
+    #d35308,
+    #a53523,
+    #702226,
+    #3a161c,
+    #000000
+  );
 }
 
-.header h1 {
+.header-content {
+  color: var(--words-color);
   text-align: center;
-  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+.header-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
   padding: 5px;
   width: 100%;
-  background-color: rgb(35, 34, 34);
   border-radius: 0.5rem;
-  color: #46a3ce;
+  letter-spacing: 0.2rem;
+}
+
+.header-content p {
+  font-size: 1.5rem;
 }
 
 .hr-search {
-  background-color: #fff;
+  background-color: #000;
   border-top: 2px dashed #8c8b8b;
   padding-bottom: 1rem;
 }
@@ -183,13 +209,9 @@ html {
 
 .logo-icon {
   display: block;
-  width: 20vw;
-  margin: auto;
-  margin-right: auto;
-  margin-bottom: 2rem;
-  border-radius: 0.75rem;
+  margin: 0 auto 1rem 1rem;
+  border-radius: 0.5rem;
   border: thin solid #000;
-  box-shadow: 0 0.2rem 0 0.2rem rgb(37, 36, 36);
 }
 
 .none {
@@ -508,10 +530,10 @@ input[type="checkbox"]:checked:disabled + label:before {
   position: absolute;
   width: 64px;
   height: 64px;
-  border: 8px solid #000;
+  border: 8px solid var(--words-color);
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #000 transparent transparent transparent;
+  border-color: var(--words-color) transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
