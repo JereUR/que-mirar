@@ -411,17 +411,17 @@ const MediaForm = ({ handleSearch }) => {
           <option defaultValue="5000" value="5000">
             Seleccione mínima cantidad de reseñas (5000 por defecto)
           </option>
-          <option value="0">0</option>
-          <option value="250">250</option>
-          <option value="500">500</option>
-          <option value="1000">1000</option>
-          <option value="2000">2000</option>
-          <option value="4000">4000</option>
-          <option value="8000">8000</option>
-          <option value="16000">16000</option>
-          <option value="32000">32000</option>
-          <option value="64000">64000</option>
-          <option value="100000">100000</option>
+          <option value="0">0 Reseñas+</option>
+          <option value="250">250 Reseñas+</option>
+          <option value="500">500 Reseñas+</option>
+          <option value="1000">1000 Reseñas+</option>
+          <option value="2000">2000 Reseñas+</option>
+          <option value="4000">4000 Reseñas+</option>
+          <option value="8000">8000 Reseñas+</option>
+          <option value="16000">16000 Reseñas+</option>
+          <option value="32000">32000 Reseñas+</option>
+          <option value="64000">64000 Reseñas+</option>
+          <option value="100000">100000 Reseñas+</option>
         </select>
       </div>
       <div className="popup-container">

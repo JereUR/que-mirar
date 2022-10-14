@@ -26,7 +26,9 @@ const InfoTable = ({ data }) => {
             ))
           ) : (
             <tr>
-              <td colSpan="8">Sin Datos</td>
+              <td className="no-data" colSpan="9">
+                Sin Resultados
+              </td>
             </tr>
           )}
         </tbody>

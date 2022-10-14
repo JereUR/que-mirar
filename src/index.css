@@ -227,6 +227,12 @@ hr {
   border: thin solid #000;
 }
 
+.no-data {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .none {
   display: none;
 }
@@ -246,6 +252,7 @@ hr {
   font-weight: 500;
   cursor: pointer;
   border: none;
+  text-align: center;
 }
 
 #num-votes > option {
@@ -385,6 +392,7 @@ tr > th {
   border: none;
   font-weight: 500;
   cursor: pointer;
+  text-align: center;
 }
 
 #top-numer > option {

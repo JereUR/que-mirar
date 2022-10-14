@@ -8,8 +8,8 @@ import linkedin from "../assets/linkedin.png";
 export const Footer = () => {
   return (
     <footer className="footer">
-      <div class="left-footer">
-        <div class="social">
+      <div className="left-footer">
+        <div className="social">
           <div>
             <a
               href="https://github.com/JereUR"
