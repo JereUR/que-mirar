@@ -31,6 +31,7 @@ const InfoTable = ({ data }) => {
           )}
         </tbody>
       </table>
+      <hr className="hr-search" />
     </div>
   );
 };

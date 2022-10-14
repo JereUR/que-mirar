@@ -13,6 +13,8 @@ code {
 :root {
   --main-font: "Montserrat", sans-serif;
   --main-color: #d35308;
+  --second-color: #d67238;
+  --third-color: #ead0c0;
   --words-color: rgb(235, 220, 220);
 }
 
@@ -48,8 +50,7 @@ html {
   float: center;
   width: 80vw;
   border-radius: 0.75rem;
-  background-color: var(--main-color);
-  opacity: 0.8;
+  background-color: var(--second-color);
   border: none;
   color: var(--words-color);
   font-size: 2rem;
@@ -61,7 +62,8 @@ html {
 }
 
 #btn-submit:hover {
-  background-color: rgb(36, 169, 16);
+  background-color: var(--second-color);
+  opacity: 0.7;
   color: #fff;
   transform: scale(1.1);
 }
@@ -79,7 +81,7 @@ html {
 
 .extra-options {
   text-align: center;
-  background-color: var(--main-color);
+  background-color: var(--second-color);
   margin: 2rem;
   color: var(--words-color);
   border-radius: 100%;
@@ -111,7 +113,8 @@ html {
 }
 
 .footer img {
-  width: 6vw;
+  width: 2vw;
+  display: block;
 }
 
 .footer-imdb {
@@ -134,22 +137,20 @@ html {
 }
 
 .front-page {
-  width: 13vh;
-  height: 13vh;
+  width: 20vh;
+  height: auto;
 }
 
 #genre {
   width: 100%;
-  background-color: rgb(212, 220, 226);
+  background-color: var(--second-color);
   margin: 2rem;
   padding: 2rem;
   border-radius: 0.5rem;
-  border: thin solid #000;
-  box-shadow: 0.5rem 0.5rem rgb(93, 93, 93);
-  border: none;
 }
 
 #genre > h2 {
+  color: var(--words-color);
   padding: 1rem;
   font-size: 24px;
   text-align: center;
@@ -185,7 +186,7 @@ html {
 }
 
 .header-content h1 {
-  font-size: 4rem;
+  font-size: 8rem;
   font-weight: bold;
   padding: 5px;
   width: 100%;
@@ -194,13 +195,25 @@ html {
 }
 
 .header-content p {
-  font-size: 1.5rem;
+  font-size: 2rem;
+}
+
+hr {
+  background-color: var(--words-color);
+  border: 0;
+  height: 0.5rem;
+  box-shadow: inset 0 12px 12px -12px var(--main-color);
 }
 
 .hr-search {
   background-color: #000;
   border-top: 2px dashed #8c8b8b;
   padding-bottom: 1rem;
+  box-shadow: none;
+}
+
+.left-footer {
+  display: grid;
 }
 
 .logo-container {
@@ -220,21 +233,19 @@ html {
 
 .num-data {
   font-weight: bold;
-  color: #1c4fda;
+  color: var(--main-color);
 }
 
 #num-votes {
-  background-color: rgb(212, 220, 226);
-  border-radius: 0.5rem;
-  border: thin solid #000;
+  background-color: var(--second-color);
+  border-radius: 5rem;
   font-family: "Montserrat", sans-serif;
-  color: #777777;
+  color: var(--words-color);
   font-size: 2rem;
   padding: 1rem;
-  border: none;
   font-weight: 500;
-  box-shadow: 0.5rem 0.5rem rgb(93, 93, 93);
   cursor: pointer;
+  border: none;
 }
 
 #num-votes > option {
@@ -250,13 +261,14 @@ html {
 .popup-container > p {
   transform: rotate(180deg);
   font-size: 3rem;
+  color: var(--words-color);
 }
 
 #popup-text {
-  margin-top: 1rem;
-  margin-left: 2rem;
+  margin: 1rem 0 1rem 2rem;
   line-height: auto;
   text-align: center;
+  color: var(--words-color);
 }
 
 .rating-data {
@@ -274,16 +286,26 @@ html {
   margin: auto;
 }
 
-.social {
+.selection-genre {
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.selection-type {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.social {
+  width: max-content;
   float: left;
   display: flex;
   justify-content: end;
 }
 
 .social-icon {
-  width: 5vh;
-  height: 5vh;
   border-radius: 50%;
   margin: 1rem;
 }
@@ -292,24 +314,34 @@ table {
   border-spacing: 0;
   border-collapse: separate;
   width: 100%;
+  padding: 0 1rem 0 1rem;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  color: var(--words-color);
 }
 
 .table-bordered {
   border: none;
 }
 
+.table-bordered td,
+.table-bordered th {
+  border: 1px solid var(--words-color);
+}
+
 .table-row > th,
 td {
   text-align: left;
   padding: 0.5rem;
-  border-bottom: thin solid #000;
   font-size: 1.5rem;
   font-weight: 400;
   top: 50%;
 }
 
 tbody {
-  background-color: #e3e0e0;
+  background-color: var(--third-color);
 }
 
 th:first-child {
@@ -334,7 +366,7 @@ th {
 }
 
 thead {
-  background-color: #46a3ce;
+  background-color: var(--second-color);
 }
 
 tr > th {
@@ -343,17 +375,15 @@ tr > th {
 }
 
 #top-number {
-  background-color: rgb(212, 220, 226);
-  border-radius: 0.5rem;
-  border: thin solid #000;
+  background-color: var(--second-color);
+  border-radius: 5rem;
   font-family: "Montserrat", sans-serif;
-  color: #777777;
+  color: var(--words-color);
   font-size: 2rem;
   padding: 1rem;
   margin-top: -1rem;
   border: none;
   font-weight: 500;
-  box-shadow: 0.5rem 0.5rem rgb(93, 93, 93);
   cursor: pointer;
 }
 
@@ -372,16 +402,15 @@ tr > th {
 #type {
   display: block;
   width: 100%;
-  background-color: rgb(212, 220, 226);
+  background-color: var(--second-color);
   margin: 2rem;
   padding: 2rem;
-  border-radius: 0.5rem;
-  border: thin solid #000;
-  box-shadow: 0.5rem 0.5rem rgb(93, 93, 93);
-  border: none;
+  border-radius: 1rem;
 }
 
 #type > h2 {
+  color: var(--words-color);
+  padding: 1rem;
   font-size: 24px;
   text-align: center;
 }
@@ -392,7 +421,6 @@ label {
   margin: 1rem;
   font-size: 1.6rem;
   font-weight: bold;
-  color: rgb(2, 2, 2);
   transition: all 0.4s ease-out;
 }
 
@@ -404,14 +432,29 @@ label {
 
 @media screen and (max-width: 1000px) {
   .selection {
-    display: grid;
-    width: 90vw;
-    height: 100%;
-    margin: 1rem;
+    display: grid !important;
+  }
+
+  #type {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 1rem 0;
+  }
+
+  #genre {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 1rem 0;
   }
 
   .container {
-    display: grid;
+    display: grid !important;
+  }
+
+  label {
+    width: 98% !important;
   }
 }
 
@@ -434,14 +477,14 @@ label {
 label {
   display: inline;
   font-weight: 600;
-  color: #777777;
+  color: rgb(58, 58, 58);
   margin-bottom: 11px;
   width: 100%;
   float: left;
   cursor: pointer;
   padding: 0 0.6rem;
   box-sizing: border-box;
-  background: #e6e6e6;
+  background: var(--third-color);
   margin: 1rem;
   font-size: 1.6rem;
   font-weight: bold;
@@ -486,7 +529,7 @@ input[type="checkbox"] + label:before {
 }
 
 input[type="checkbox"]:checked + label {
-  background: #c1eec2;
+  background: #9ee7a0;
 }
 
 input[type="checkbox"]:checked + label:after {
@@ -495,10 +538,10 @@ input[type="checkbox"]:checked + label:after {
   height: 6px;
   border: 4px solid #0fbf12;
   float: left;
-  margin-left: -1.95em;
+  margin-left: -1.65em;
   border-right: 0;
   border-top: 0;
-  margin-top: 1em;
+  margin-top: 1.05em;
   transform: rotate(-55deg);
 }
 
