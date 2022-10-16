@@ -1,5 +1,6 @@
 import React from "react";
 import { helpHttp } from "../helpers/helpHttp";
+import Loader from "./Loader";
 
 const InfoTableRow = ({ el, num }) => {
   let {
@@ -21,8 +22,12 @@ const InfoTableRow = ({ el, num }) => {
 
     const [data] = await Promise.all([helpHttp().get(url)]);
 
+    console.log(data);
+
     if (data.videoUrl === null || data.videoUrl === "") {
-      var content = document.createTextNode("Trailer no disponible 😞");
+      var content = document.createElement("p");
+      content.innerHTML = "Trailer no disponible 😞";
+      content.classList.add("trailer-text");
 
       e.target.appendChild(document.createElement("br"));
       e.target.appendChild(document.createElement("br"));
@@ -30,6 +35,27 @@ const InfoTableRow = ({ el, num }) => {
       e.target.appendChild(content);
     } else {
       window.open(data.videoUrl, "_blank");
+    }
+  };
+
+  const handleTitle = async (e) => {
+    e.preventDefault();
+
+    let url = `${process.env.REACT_APP_API_TITLE}${id}`;
+
+    const [dataTitle] = await Promise.all([helpHttp().get(url)]);
+
+    if (dataTitle.url === null || dataTitle.url === "") {
+      var content = document.createElement("p");
+      content.innerHTML = "Información no disponible 😞";
+      content.classList.add("title-text");
+
+      e.target.appendChild(document.createElement("br"));
+      e.target.appendChild(document.createElement("br"));
+
+      e.target.appendChild(content);
+    } else {
+      window.open(dataTitle.url, "_blank");
     }
   };
 
@@ -44,7 +70,13 @@ const InfoTableRow = ({ el, num }) => {
           <img className="front-page" src={image} alt="front-page" />
         </figure>
       </td>
-      <td>{title}</td>
+      <td>
+        <section className="btn-title">
+          <form onSubmit={handleTitle}>
+            <input type="submit" id="btn-title" value={title}></input>
+          </form>
+        </section>
+      </td>
       <td>{genres}</td>
       <td>{description}</td>
       <td>{plot}</td>
@@ -56,7 +88,7 @@ const InfoTableRow = ({ el, num }) => {
             <input
               type="submit"
               id="btn-trailer"
-              value="Ver trailer..."
+              value="VER TRAILER..."
             ></input>
           </form>
         </section>
