@@ -21,10 +21,7 @@ export default function MediaSearch() {
 
       const [data] = await Promise.all([helpHttp().get(url)]);
 
-      /* let res = await fetch(url),
-        json = await res.json(); */
-
-      /* console.log(data); */
+      console.log(data);
 
       setData(data.results);
       if (data != null) {
@@ -43,7 +40,6 @@ export default function MediaSearch() {
     <div>
       <article className="grid-1-2">
         <MediaForm handleSearch={handleSearch} />
-        <hr className="hr-search" />
         {loading && <Loader />}
         {search && !loading && <InfoTable data={data} />}
       </article>

@@ -13,9 +13,10 @@ code {
 :root {
   --main-font: "Montserrat", sans-serif;
   --main-color: #d35308;
-  --second-color: #d67238;
+  --second-color: #d48d63;
   --third-color: #ead0c0;
-  --words-color: rgb(235, 220, 220);
+  --words-color: rgb(58, 58, 58);
+  --header-words: rgb(235, 220, 220);
 }
 
 html {
@@ -154,6 +155,7 @@ html {
   padding: 1rem;
   font-size: 24px;
   text-align: center;
+  font-weight: bold;
 }
 
 .genre-slc {
@@ -180,7 +182,7 @@ html {
 }
 
 .header-content {
-  color: var(--words-color);
+  color: var(--header-words);
   text-align: center;
   padding-bottom: 2rem;
 }
@@ -268,14 +270,14 @@ hr {
 .popup-container > p {
   transform: rotate(180deg);
   font-size: 3rem;
-  color: var(--words-color);
+  color: var(--header-words);
 }
 
 #popup-text {
   margin: 1rem 0 1rem 2rem;
   line-height: auto;
   text-align: center;
-  color: var(--words-color);
+  color: var(--header-words);
 }
 
 .rating-data {
@@ -421,6 +423,7 @@ tr > th {
   padding: 1rem;
   font-size: 24px;
   text-align: center;
+  font-weight: bold;
 }
 
 #type > input,
@@ -485,7 +488,7 @@ label {
 label {
   display: inline;
   font-weight: 600;
-  color: rgb(58, 58, 58);
+  color: var(--words-color);
   margin-bottom: 11px;
   width: 100%;
   float: left;
@@ -581,10 +584,10 @@ input[type="checkbox"]:checked:disabled + label:before {
   position: absolute;
   width: 64px;
   height: 64px;
-  border: 8px solid var(--words-color);
+  border: 8px solid var(--header-words);
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: var(--words-color) transparent transparent transparent;
+  border-color: var(--header-words) transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;

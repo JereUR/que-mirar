@@ -12,7 +12,6 @@ export const Header = () => {
           <i>Encontrá algo para maratonear... </i>
         </p>
       </div>
-      <hr />
     </header>
   );
 };

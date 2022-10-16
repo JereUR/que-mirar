@@ -1,4 +1,5 @@
 import React from "react";
+import { helpHttp } from "../helpers/helpHttp";
 
 const InfoTableRow = ({ el, num }) => {
   let {
@@ -10,7 +11,30 @@ const InfoTableRow = ({ el, num }) => {
     plot,
     imDbRatingVotes,
     stars,
+    id,
   } = el;
+
+  let rowNumber = `td-${num}`;
+
+  const handleTrailer = async (e) => {
+    e.preventDefault();
+
+    console.log(id);
+
+    let url = `${process.env.REACT_APP_API_HREF}${id}`;
+
+    const [data] = await Promise.all([helpHttp().get(url)]);
+
+    console.log(data);
+
+    if (data.videoUrl === null || data.videoUrl === "") {
+      var content = document.createTextNode("Trailer no disponible...");
+
+      e.target.appendChild(content);
+    } else {
+      window.open(data.videoUrl, "_blank");
+    }
+  };
 
   return (
     <tr className="table-row">
@@ -29,6 +53,17 @@ const InfoTableRow = ({ el, num }) => {
       <td>{plot}</td>
       <td>{imDbRatingVotes}</td>
       <td>{stars}</td>
+      <td>
+        <section className="btn-trailer">
+          <form onSubmit={handleTrailer}>
+            <input
+              type="submit"
+              id="btn-trailer"
+              value="QUÉ MIRAR  >>>"
+            ></input>
+          </form>
+        </section>
+      </td>
     </tr>
   );
 };

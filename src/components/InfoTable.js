@@ -17,6 +17,7 @@ const InfoTable = ({ data }) => {
             <th>Descripción</th>
             <th>Total de votos</th>
             <th>Elenco principal</th>
+            <th>Trailer</th>
           </tr>
         </thead>
         <tbody>
@@ -26,7 +27,7 @@ const InfoTable = ({ data }) => {
             ))
           ) : (
             <tr>
-              <td className="no-data" colSpan="9">
+              <td className="no-data" colSpan="10">
                 Sin Resultados
               </td>
             </tr>

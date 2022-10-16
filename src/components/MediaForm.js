@@ -133,38 +133,29 @@ const MediaForm = ({ handleSearch }) => {
             <div className="type-slc">
               <input
                 type="checkbox"
-                value="tv_special"
+                value="tv_miniseries"
                 id="type-checkbox4"
                 onChange={typesHandleChecked}
               />
-              <label htmlFor="type-checkbox4">Especial de TV</label>
-            </div>
-            <div className="type-slc">
-              <input
-                type="checkbox"
-                value="tv_miniseries"
-                id="type-checkbox5"
-                onChange={typesHandleChecked}
-              />
-              <label htmlFor="type-checkbox5">Mini-Serie</label>
+              <label htmlFor="type-checkbox4">Mini-Serie</label>
             </div>
             <div className="type-slc">
               <input
                 type="checkbox"
                 value="documentary"
-                id="type-checkbox6"
+                id="type-checkbox5"
                 onChange={typesHandleChecked}
               />
-              <label htmlFor="type-checkbox6">Documental</label>
+              <label htmlFor="type-checkbox5">Documental</label>
             </div>
             <div className="type-slc">
               <input
                 type="checkbox"
                 value="short"
-                id="type-checkbox7"
+                id="type-checkbox6"
                 onChange={typesHandleChecked}
               />
-              <label htmlFor="type-checkbox7">Cortometraje</label>
+              <label htmlFor="type-checkbox6">Cortometraje</label>
             </div>
           </form>
         </div>
