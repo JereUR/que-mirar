@@ -14,21 +14,18 @@ const InfoTableRow = ({ el, num }) => {
     id,
   } = el;
 
-  let rowNumber = `td-${num}`;
-
   const handleTrailer = async (e) => {
     e.preventDefault();
-
-    console.log(id);
 
     let url = `${process.env.REACT_APP_API_HREF}${id}`;
 
     const [data] = await Promise.all([helpHttp().get(url)]);
 
-    console.log(data);
-
     if (data.videoUrl === null || data.videoUrl === "") {
-      var content = document.createTextNode("Trailer no disponible...");
+      var content = document.createTextNode("Trailer no disponible 😞");
+
+      e.target.appendChild(document.createElement("br"));
+      e.target.appendChild(document.createElement("br"));
 
       e.target.appendChild(content);
     } else {
@@ -59,7 +56,7 @@ const InfoTableRow = ({ el, num }) => {
             <input
               type="submit"
               id="btn-trailer"
-              value="QUÉ MIRAR  >>>"
+              value="Ver trailer..."
             ></input>
           </form>
         </section>

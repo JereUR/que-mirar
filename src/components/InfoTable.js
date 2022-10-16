@@ -15,9 +15,9 @@ const InfoTable = ({ data }) => {
             <th>Género/s</th>
             <th>Año</th>
             <th>Descripción</th>
-            <th>Total de votos</th>
+            <th>Reseñas</th>
             <th>Elenco principal</th>
-            <th>Trailer</th>
+            <th>Trailer (Solo disponible para algunas películas)</th>
           </tr>
         </thead>
         <tbody>

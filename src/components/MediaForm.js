@@ -399,8 +399,8 @@ const MediaForm = ({ handleSearch }) => {
       <hr />
       <div className="votes-section">
         <select id="num-votes">
-          <option defaultValue="5000" value="5000">
-            Seleccione mínima cantidad de reseñas (5000 por defecto)
+          <option defaultValue="10000" value="10000">
+            Seleccione mínima cantidad de reseñas (10000 por defecto)
           </option>
           <option value="0">0 Reseñas+</option>
           <option value="250">250 Reseñas+</option>
