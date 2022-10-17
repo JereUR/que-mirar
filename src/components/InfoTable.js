@@ -28,13 +28,12 @@ const InfoTable = ({ data }) => {
           ) : (
             <tr>
               <td className="no-data" colSpan="10">
-                Sin Resultados
+                Sin Coincidencias
               </td>
             </tr>
           )}
         </tbody>
       </table>
-      <hr className="hr-search" />
     </div>
   );
 };

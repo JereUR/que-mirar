@@ -1,6 +1,5 @@
 import React from "react";
 import { helpHttp } from "../helpers/helpHttp";
-import Loader from "./Loader";
 
 const InfoTableRow = ({ el, num }) => {
   let {
@@ -21,8 +20,6 @@ const InfoTableRow = ({ el, num }) => {
     let url = `${process.env.REACT_APP_API_HREF}${id}`;
 
     const [data] = await Promise.all([helpHttp().get(url)]);
-
-    console.log(data);
 
     if (data.videoUrl === null || data.videoUrl === "") {
       var content = document.createElement("p");
@@ -71,9 +68,10 @@ const InfoTableRow = ({ el, num }) => {
         </figure>
       </td>
       <td>
+        <p className="title-name">{title}</p>
         <section className="btn-title">
           <form onSubmit={handleTitle}>
-            <input type="submit" id="btn-title" value={title}></input>
+            <input type="submit" id="btn-title" value="[Más info...]"></input>
           </form>
         </section>
       </td>

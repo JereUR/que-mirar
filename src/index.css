@@ -136,11 +136,11 @@ html {
 .footer-created {
   margin-top: auto;
   padding-left: 1rem;
-  color: var(--words-color);
+  color: var(--header-words);
 }
 
 .footer img {
-  width: 2vw;
+  width: 6vw;
   display: block;
 }
 
@@ -153,7 +153,7 @@ html {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  color: var(--words-color);
+  color: var(--header-words);
 }
 
 .footer-text {
@@ -340,6 +340,11 @@ hr {
   justify-content: end;
 }
 
+.social img {
+  width: 2vw;
+  display: block;
+}
+
 .social-icon {
   border-radius: 50%;
   margin: 1rem;
@@ -413,6 +418,10 @@ tr > th {
   font-size: 1.5rem;
   font-weight: bold;
   color: rgb(179, 19, 19);
+}
+
+.title-name {
+  font-weight: bold;
 }
 
 .trailer-text {
