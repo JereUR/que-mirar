@@ -427,9 +427,10 @@ const MediaForm = ({ handleSearch }) => {
       </div>
       <div className="top-section">
         <select id="top-number">
-          <option defaultValue="50" value="50">
-            Top 50
+          <option defaultValue="100" value="100">
+            Seleccione cantidad de títulos a mostrar (100 por defecto)
           </option>
+          <option value="50">Top 50</option>
           <option value="100">Top 100</option>
           <option value="150">Top 150</option>
           <option value="200">Top 200</option>
