@@ -11,7 +11,8 @@ const InfoTable = ({ data }) => {
           ⛔ Error con el servidor. Intente nuevamente. ⛔
         </h1>
         <h4 className="error-text">
-          *Puede ocurrir que se haya alcanzado el límite de requerimientos.
+          *Puede ocurrir que se haya alcanzado el límite de requerimientos por
+          día.
         </h4>
       </div>
     );
