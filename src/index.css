@@ -106,6 +106,14 @@ html {
   padding: 0;
 }
 
+.error-container {
+  margin: 2rem;
+  text-align: center;
+  background-color: #dd3218;
+  color: var(--third-color);
+  border-radius: 50%;
+}
+
 .extra-options {
   text-align: center;
   background-color: var(--second-color);

@@ -9,7 +9,7 @@ export const Header = () => {
         </article> */}
         <h1>QueMirar</h1>
         <p>
-          <i>Encontrá algo para maratonear... </i>
+          <i>Encontrá algo nuevo para ver... </i>
         </p>
       </div>
     </header>

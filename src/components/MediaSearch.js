@@ -24,8 +24,7 @@ export default function MediaSearch() {
       /* console.log(data); */
 
       if (data.errorMessage != null) {
-        setData({ error: true });
-        console.log(data);
+        setData(data);
       } else {
         setData(data.results);
         if (data != null) {
