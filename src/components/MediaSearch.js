@@ -21,7 +21,7 @@ export default function MediaSearch() {
 
       const [data] = await Promise.all([helpHttp().get(url)]);
 
-      console.log(data);
+      /* console.log(data); */
 
       if (data.errorMessage != null) {
         setData(data);
