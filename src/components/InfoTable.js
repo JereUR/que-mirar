@@ -4,10 +4,15 @@ import InfoTableRow from "./InfoTableRow";
 const InfoTable = ({ data }) => {
   let num = 1;
 
-  if (data === undefined || data.err != null) {
+  if (data === null) {
     return (
       <div className="error-container">
-        <h1 className="error-text">⛔ Límite de consultas alcanzado ⛔</h1>
+        <h1 className="error-text">
+          ⛔ Error con el servidor. Intente nuevamente. ⛔
+        </h1>
+        <h4 className="error-text">
+          *Puede ocurrir que se haya alcanzado el límite de requerimientos.
+        </h4>
       </div>
     );
   } else {

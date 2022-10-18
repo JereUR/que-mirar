@@ -1,5 +1,6 @@
 import React from "react";
 import { helpHttp } from "../helpers/helpHttp";
+import LoaderTrailer from "./LoaderTrailer";
 
 const InfoTableRow = ({ el, num }) => {
   let {
@@ -26,10 +27,12 @@ const InfoTableRow = ({ el, num }) => {
       content.innerHTML = "Trailer no disponible 😞";
       content.classList.add("trailer-text");
 
-      e.target.appendChild(document.createElement("br"));
-      e.target.appendChild(document.createElement("br"));
+      if (e.target.querySelector(".trailer-text") === null) {
+        e.target.appendChild(document.createElement("br"));
+        e.target.appendChild(document.createElement("br"));
 
-      e.target.appendChild(content);
+        e.target.appendChild(content);
+      }
     } else {
       window.open(data.videoUrl, "_blank");
     }

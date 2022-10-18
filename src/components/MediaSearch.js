@@ -21,15 +21,11 @@ export default function MediaSearch() {
 
       const [data] = await Promise.all([helpHttp().get(url)]);
 
-      /* console.log(data); */
+      console.log(data);
 
-      if (data.errorMessage != null) {
-        setData(data);
-      } else {
-        setData(data.results);
-        if (data != null) {
-          setLoading(false);
-        }
+      setData(data.results);
+      if (data != null) {
+        setLoading(false);
       }
     };
 
