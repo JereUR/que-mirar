@@ -6,8 +6,8 @@ const InfoTable = ({ data }) => {
 
   if (data === undefined || data.err != null) {
     return (
-      <div class="error-container">
-        <h1 class="error-text">⛔ Límite de consultas alcanzado ⛔</h1>
+      <div className="error-container">
+        <h1 className="error-text">⛔ Límite de consultas alcanzado ⛔</h1>
       </div>
     );
   } else {
