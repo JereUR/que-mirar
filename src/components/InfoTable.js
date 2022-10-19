@@ -4,16 +4,13 @@ import InfoTableRow from "./InfoTableRow";
 const InfoTable = ({ data }) => {
   let num = 1;
 
-  if (data === null) {
+  if (typeof data === "string") {
     return (
       <div className="error-container">
         <h1 className="error-text">
           ⛔ Error con el servidor. Intente nuevamente. ⛔
         </h1>
-        <h4 className="error-text">
-          *Puede ocurrir que se haya alcanzado el límite de requerimientos por
-          día.
-        </h4>
+        <h4 className="error-text">{data}</h4>
       </div>
     );
   } else {

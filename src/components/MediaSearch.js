@@ -23,9 +23,16 @@ export default function MediaSearch() {
 
       /* console.log(data); */
 
-      setData(data.results);
-      if (data != null) {
-        setLoading(false);
+      if (data.errorMessage) {
+        setData(data.errorMessage);
+        if (data != null) {
+          setLoading(false);
+        }
+      } else {
+        setData(data.results);
+        if (data != null) {
+          setLoading(false);
+        }
       }
     };
 
