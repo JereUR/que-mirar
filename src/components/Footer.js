@@ -38,9 +38,9 @@ export const Footer = () => {
 
       <div className="footer-powered">
         <p className="footer-text">Powered by</p>
-        <img src={reactImg} alt="react-logo" />
+        <img className="footer-img" src={reactImg} alt="react-logo" />
         <p className="footer-text">&</p>
-        <img className="footer-imdb" src={imdbImg} alt="imdb-logo" />
+        <img className="footer-img footer-imdb" src={imdbImg} alt="imdb-logo" />
       </div>
     </footer>
   );

@@ -148,7 +148,7 @@ html {
   color: var(--header-words);
 }
 
-.footer img {
+.footer-img {
   width: 6vw;
   display: block;
 }
@@ -523,6 +523,15 @@ label {
   label {
     width: 98% !important;
   }
+
+  .social img {
+    width: 4vw;
+  }
+
+  .footer-img {
+    width: 9vw;
+    display: block;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -536,6 +545,15 @@ label {
 
   .container {
     display: grid;
+  }
+
+  .social img {
+    width: 5vw;
+  }
+
+  .footer-img {
+    width: 15vw;
+    display: block;
   }
 }
 
