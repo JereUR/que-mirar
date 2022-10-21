@@ -92,6 +92,7 @@ const MediaForm = ({ handleSearch }) => {
     handleSearch(info);
     setUrlParams(initialParams);
     cleanForm();
+    document.querySelector(".footer").scrollIntoView({ behavior: "smooth" });
   };
 
   return (
