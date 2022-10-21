@@ -40,7 +40,7 @@ export const Footer = () => {
         <p className="footer-text">Powered by</p>
         <img className="footer-img" src={reactImg} alt="react-logo" />
         <p className="footer-text">&</p>
-        <img className="footer-img footer-imdb" src={imdbImg} alt="imdb-logo" />
+        <img className="footer-img" src={imdbImg} alt="imdb-logo" />
       </div>
     </footer>
   );

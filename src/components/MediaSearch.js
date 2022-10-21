@@ -8,6 +8,35 @@ export default function MediaSearch() {
   const [search, setSearch] = useState(null);
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
+  const [y, setY] = useState(window.scrollY);
+
+  const handleNavigation = () => {
+    const $scrollBtn = document.querySelector(".scroll-top-btn");
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > 1200) {
+      if ($scrollBtn.classList.contains("hidden")) {
+        $scrollBtn.classList.remove("hidden");
+      }
+    } else {
+      if (!$scrollBtn.classList.contains("hidden")) {
+        $scrollBtn.classList.add("hidden");
+      }
+    }
+  };
+
+  useEffect(() => {
+    setY(window.scrollY);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", (e) => handleNavigation(e));
+
+    return () => {
+      // Return a cleanup function to unregister our function since its gonna run multiple times
+      window.removeEventListener("scroll", (e) => handleNavigation(e));
+    };
+  }, [y]);
 
   useEffect(() => {
     if (search === null) return;
@@ -43,6 +72,10 @@ export default function MediaSearch() {
     setSearch(url);
   };
 
+  const handleClickScroll = () => {
+    document.querySelector(".selection").scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div>
       <article className="grid-1-2">
@@ -50,6 +83,9 @@ export default function MediaSearch() {
         {loading && <Loader />}
         {search && !loading && <InfoTable data={data} />}
       </article>
+      <button onClick={handleClickScroll} className="scroll-top-btn hidden">
+        &#11014;
+      </button>
     </div>
   );
 }
