@@ -73,7 +73,7 @@ export default function MediaSearch() {
   };
 
   const handleClickScroll = () => {
-    document.querySelector(".selection").scrollIntoView({ behavior: "smooth" });
+    document.querySelector(".header").scrollIntoView({ behavior: "smooth" });
   };
 
   return (
