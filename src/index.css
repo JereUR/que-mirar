@@ -762,7 +762,6 @@ input[type="checkbox"]:checked:disabled + label:before {
   color: var(--header-words);
   margin: 0;
   border-bottom-right-radius: 0.8rem;
-  border-bottom-left-radius: 0.8rem;
 }
 
 /* Section 2 */
