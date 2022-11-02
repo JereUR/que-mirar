@@ -10,7 +10,6 @@ function App() {
     $inner = document.querySelector(".inner");
 
   window.scroll(() => {
-    console.log("scroll");
     var scrollTop = this.scrollTop(),
       headlineHeight = $headline.outerHeight();
 

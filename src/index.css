@@ -68,16 +68,16 @@ html {
   transform: scale(1.1);
 }
 
-#btn-title {
+/* #btn-title {
   background-color: transparent;
   border: none;
   cursor: pointer;
   text-decoration: underline;
   font-weight: bold;
   color: var(--main-color);
-}
+} */
 
-#btn-trailer {
+/* #btn-trailer {
   height: auto;
   border-radius: 1rem;
   padding: 0.5rem;
@@ -93,7 +93,7 @@ html {
   background-color: var(--second-color);
   opacity: 0.7;
   transform: scale(1.05);
-}
+} */
 
 .clarification {
   cursor: pointer;
@@ -169,10 +169,10 @@ html {
   margin-left: 0.2rem;
 }
 
-.front-page {
+/* .front-page {
   width: 20vh;
   height: auto;
-}
+} */
 
 #genre {
   width: 100%;
@@ -271,10 +271,10 @@ hr {
   display: none;
 }
 
-.num-data {
+/* .num-data {
   font-weight: bold;
   color: var(--main-color);
-}
+} */
 
 #num-votes {
   background-color: var(--second-color);
@@ -312,9 +312,9 @@ hr {
   color: var(--header-words);
 }
 
-.rating-data {
+/* .rating-data {
   font-weight: bold;
-}
+} */
 
 .popup-container .right > p {
   transform: rotate(-90deg);
@@ -356,7 +356,7 @@ hr {
   margin: 1rem;
 }
 
-table {
+/* table {
   border-spacing: 0;
   border-collapse: separate;
   width: 100%;
@@ -419,8 +419,8 @@ tr > th {
   text-align: center;
   font-size: 1.6rem;
 }
-
-.title-text {
+ */
+/* .title-text {
   font-size: 1.5rem;
   font-weight: bold;
   color: rgb(179, 19, 19);
@@ -434,7 +434,7 @@ tr > th {
   font-size: 1.5rem;
   font-weight: bold;
   color: rgb(179, 19, 19);
-}
+} */
 
 #top-number {
   background-color: var(--second-color);
@@ -707,4 +707,157 @@ input[type="checkbox"]:checked:disabled + label:before {
 .hidden {
   visibility: hidden;
   opacity: 0;
+}
+
+/* Results Styles */
+
+.film-container {
+  display: flex;
+  margin: 0.5rem;
+  margin-bottom: 2rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--words-color);
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 1rem;
+}
+
+.film-table {
+  padding: 0 1rem 0 1rem;
+  padding-top: 5rem;
+}
+
+/* Section 1 */
+
+.film-section-1 {
+  position: relative;
+  display: flex;
+  margin: 1rem;
+  font-weight: 500;
+}
+
+.film-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.film-img {
+  width: 30vh;
+  margin: 0.5rem;
+  height: auto;
+  padding-right: 1rem;
+}
+
+.film-index {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.film-index > p {
+  background-color: var(--main-color);
+  padding: 1rem;
+  color: var(--header-words);
+  margin: 0;
+  border-bottom-right-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+}
+
+/* Section 2 */
+
+.btn-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--header-words);
+  background-color: var(--main-color);
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.calification {
+  padding-left: 1rem;
+  margin-top: 1.2rem;
+  font-size: 1.5rem;
+}
+
+.film-calification {
+  position: relative;
+  display: flex;
+}
+
+.film-cast {
+  font-size: 1.5rem;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.film-cast > u {
+  font-weight: bold;
+}
+
+.film-genre {
+  font-size: 1.5rem;
+}
+
+.film-synopsis {
+  font-size: 2rem;
+}
+
+.film-section-2 {
+  position: relative;
+  display: flex;
+  width: 80%;
+  font-weight: 500;
+  color: var(--second-color);
+}
+
+.film-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--main-color);
+}
+
+.film-title-info {
+  display: flex;
+}
+
+.film-trailer {
+  position: relative;
+}
+
+.imdb-logo {
+  width: 4vh;
+  height: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.trailer {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  margin-right: 2rem;
+  background-color: var(--main-color);
+}
+
+.trailer > a {
+  text-decoration: none;
+  color: var(--header-words);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1000px) {
+  .film-trailer {
+    margin-right: 2rem;
+  }
 }

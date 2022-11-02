@@ -15,7 +15,7 @@ const InfoTable = ({ data }) => {
     );
   } else {
     return (
-      <div>
+      /* <div>
         <table className="table table-bordered">
           <thead>
             <tr>
@@ -45,6 +45,18 @@ const InfoTable = ({ data }) => {
             )}
           </tbody>
         </table>
+      </div> */
+
+      <div className="film-table">
+        {data.length > 0 ? (
+          data.map((el) => (
+            <InfoTableRow key={el.id} el={el} num={num++}></InfoTableRow>
+          ))
+        ) : (
+          <div>
+            <h1 className="no-data">Sin Coincidencias</h1>
+          </div>
+        )}
       </div>
     );
   }

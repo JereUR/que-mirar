@@ -1,6 +1,6 @@
 import React from "react";
 import { helpHttp } from "../helpers/helpHttp";
-import LoaderTrailer from "./LoaderTrailer";
+import imdbLogo from "../assets/imdb-logo.png";
 
 const InfoTableRow = ({ el, num }) => {
   let {
@@ -25,7 +25,7 @@ const InfoTableRow = ({ el, num }) => {
     if (data.videoUrl === null || data.videoUrl === "") {
       var content = document.createElement("p");
       content.innerHTML = "Trailer no disponible 😞";
-      content.classList.add("trailer-text");
+      content.classNameList.add("trailer-text");
 
       if (e.target.querySelector(".trailer-text") === null) {
         e.target.appendChild(document.createElement("br"));
@@ -48,7 +48,7 @@ const InfoTableRow = ({ el, num }) => {
     if (dataTitle.url === null || dataTitle.url === "") {
       var content = document.createElement("p");
       content.innerHTML = "Información no disponible 😞";
-      content.classList.add("title-text");
+      content.classNameList.add("title-text");
 
       e.target.appendChild(document.createElement("br"));
       e.target.appendChild(document.createElement("br"));
@@ -60,7 +60,7 @@ const InfoTableRow = ({ el, num }) => {
   };
 
   return (
-    <tr className="table-row">
+    /* <tr className="table-row">
       <td className="num-data">
         <p>{num}</p>
       </td>
@@ -94,7 +94,57 @@ const InfoTableRow = ({ el, num }) => {
           </form>
         </section>
       </td>
-    </tr>
+    </tr> */
+
+    <div className="film-container">
+      <div className="film-section-1">
+        <div className="film-index">
+          <p>#{num}</p>
+        </div>
+        <div className="film-image">
+          <img src={image} alt="film-img" className="film-img" />
+        </div>
+      </div>
+      <div className="film-section-2">
+        <div className="film-info">
+          <div className="film-title-info">
+            <p className="film-title">
+              {title} <i>{description}</i>
+            </p>
+            <div className="btn-title-div">
+              <form onSubmit={handleTitle}>
+                <input
+                  type="submit"
+                  className="btn-title"
+                  value="[Más info...]"
+                ></input>
+              </form>
+            </div>
+          </div>
+          <div className="film-calification">
+            <img src={imdbLogo} alt="imdb-logo" className="imdb-logo" />
+            <p className="calification">
+              ⭐{imDbRating} - <i>{imDbRatingVotes} Reseñas</i>
+            </p>
+          </div>
+          <p className="film-genre">{genres}</p>
+          <i className="film-synopsis">{plot}</i>
+          <hr />
+          <p className="film-cast">
+            <u>Elenco principal:</u> {stars}
+          </p>
+        </div>
+        <div className="film-trailer">
+          <form onSubmit={handleTrailer}>
+            <input
+              type="submit"
+              className="trailer"
+              value="VER TRAILER..."
+            ></input>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 };
 
