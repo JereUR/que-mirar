@@ -420,7 +420,6 @@ const MediaForm = ({ handleSearch }) => {
         <p className="clarification" onClick={popText}>
           ☟
         </p>
-        <hr />
         <h3 id="popup-text" className="none">
           Cuanto mayor sea la cantidad mínima, más confiable serán los títulos
           mostrados en cuanto a su calidad.

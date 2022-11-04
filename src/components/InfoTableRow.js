@@ -25,12 +25,9 @@ const InfoTableRow = ({ el, num }) => {
     if (data.videoUrl === null || data.videoUrl === "") {
       var content = document.createElement("p");
       content.innerHTML = "Trailer no disponible 😞";
-      content.classNameList.add("trailer-text");
+      content.classList.add("trailer-text");
 
       if (e.target.querySelector(".trailer-text") === null) {
-        e.target.appendChild(document.createElement("br"));
-        e.target.appendChild(document.createElement("br"));
-
         e.target.appendChild(content);
       }
     } else {
@@ -48,12 +45,11 @@ const InfoTableRow = ({ el, num }) => {
     if (dataTitle.url === null || dataTitle.url === "") {
       var content = document.createElement("p");
       content.innerHTML = "Información no disponible 😞";
-      content.classNameList.add("title-text");
+      content.classList.add("title-text");
 
-      e.target.appendChild(document.createElement("br"));
-      e.target.appendChild(document.createElement("br"));
-
-      e.target.appendChild(content);
+      if (e.target.querySelector(".title-text") === null) {
+        e.target.appendChild(content);
+      }
     } else {
       window.open(dataTitle.url, "_blank");
     }
@@ -112,11 +108,11 @@ const InfoTableRow = ({ el, num }) => {
               {title} <i>{description}</i>
             </p>
             <div className="btn-title-div">
-              <form onSubmit={handleTitle}>
+              <form className="btn-title-form" onSubmit={handleTitle}>
                 <input
                   type="submit"
                   className="btn-title"
-                  value="[Más info...]"
+                  value="Más info..."
                 ></input>
               </form>
             </div>
@@ -129,19 +125,23 @@ const InfoTableRow = ({ el, num }) => {
           </div>
           <p className="film-genre">{genres}</p>
           <i className="film-synopsis">{plot}</i>
+          <br />
+          <br />
           <hr />
+          <br />
+          <br />
           <p className="film-cast">
             <u>Elenco principal:</u> {stars}
           </p>
-        </div>
-        <div className="film-trailer">
-          <form onSubmit={handleTrailer}>
-            <input
-              type="submit"
-              className="trailer"
-              value="VER TRAILER..."
-            ></input>
-          </form>
+          <div className="film-trailer">
+            <form className="trailer-form" onSubmit={handleTrailer}>
+              <input
+                type="submit"
+                className="trailer"
+                value="VER TRAILER>>>"
+              ></input>
+            </form>
+          </div>
         </div>
       </div>
     </div>
