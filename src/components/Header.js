@@ -1,4 +1,5 @@
 import React from "react";
+import film from "../assets/cine-logo.jpg";
 
 export const Header = () => {
   return (
@@ -7,11 +8,15 @@ export const Header = () => {
         {/* <article className="logo-container">
           <img className="logo-icon" src={logo} alt="logo" />
         </article> */}
-        <h1>QueMirar</h1>
-        <p>
-          <i>Encontrá algo nuevo para ver... </i>
-        </p>
+        <h1>
+          {" "}
+          <img src={film} alt="film" className="film-header" /> QueMirar <br />{" "}
+          <p>
+            <i>Encontrá algo nuevo para ver... </i>
+          </p>
+        </h1>
       </div>
+      <hr />
     </header>
   );
 };

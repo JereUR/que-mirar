@@ -2,7 +2,7 @@ import React from "react";
 import imdbImg from "../assets/imdb-api.png";
 import reactImg from "../assets/react-logo.png";
 import logo from "../assets/Logo.png";
-import github from "../assets/github.png";
+import github from "../assets/github-logo.png";
 import linkedin from "../assets/linkedin.png";
 
 export const Footer = () => {
@@ -16,7 +16,7 @@ export const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img className="social-icon" src={github} alt="github" />
+              <img className="social-icon github" src={github} alt="github" />
             </a>
           </div>
           <div>
