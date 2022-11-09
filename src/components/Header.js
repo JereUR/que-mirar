@@ -6,9 +6,6 @@ export const Header = () => {
     <header className="header">
       <hr />
       <div className="header-content container">
-        {/* <article className="logo-container">
-          <img className="logo-icon" src={logo} alt="logo" />
-        </article> */}
         <h1>
           {" "}
           <img src={film} alt="film" className="film-header" /> QueMirar <br />{" "}

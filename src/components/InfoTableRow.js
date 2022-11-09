@@ -56,42 +56,6 @@ const InfoTableRow = ({ el, num }) => {
   };
 
   return (
-    /* <tr className="table-row">
-      <td className="num-data">
-        <p>{num}</p>
-      </td>
-      <td className="rating-data">⭐{imDbRating}</td>
-      <td>
-        <figure>
-          <img className="front-page" src={image} alt="front-page" />
-        </figure>
-      </td>
-      <td>
-        <p className="title-name">{title}</p>
-        <section className="btn-title">
-          <form onSubmit={handleTitle}>
-            <input type="submit" id="btn-title" value="[Más info...]"></input>
-          </form>
-        </section>
-      </td>
-      <td>{genres}</td>
-      <td>{description}</td>
-      <td>{plot}</td>
-      <td>{imDbRatingVotes}</td>
-      <td>{stars}</td>
-      <td>
-        <section className="btn-trailer">
-          <form onSubmit={handleTrailer}>
-            <input
-              type="submit"
-              id="btn-trailer"
-              value="VER TRAILER..."
-            ></input>
-          </form>
-        </section>
-      </td>
-    </tr> */
-
     <div className="film-container">
       <div className="film-section-1">
         <div className="film-index">
