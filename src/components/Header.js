@@ -4,6 +4,7 @@ import film from "../assets/cine-logo.jpg";
 export const Header = () => {
   return (
     <header className="header">
+      <hr />
       <div className="header-content container">
         {/* <article className="logo-container">
           <img className="logo-icon" src={logo} alt="logo" />

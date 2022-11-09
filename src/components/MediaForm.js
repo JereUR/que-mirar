@@ -1006,8 +1006,8 @@ const Button = styled.button`
   letter-spacing: 0.3rem;
   font-weight: 800;
   transition: 0.5s ease all;
-  margin-top: 1.7rem;
-  margin-bottom: 1.7rem;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
 
   &:hover {
     transform: scale(1.04);
