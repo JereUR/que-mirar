@@ -134,7 +134,6 @@ html {
 }
 
 .header {
-  display: block;
   top: 0;
   z-index: 997;
   padding: 10px;
@@ -145,6 +144,9 @@ html {
 }
 
 .header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--header-words);
   text-align: center;
   padding-bottom: 2rem;
@@ -156,7 +158,6 @@ html {
   padding: 5px;
   width: 100%;
   border-radius: 0.5rem;
-  letter-spacing: 0.2rem;
   margin-top: 2rem;
   letter-spacing: 0.5rem;
 }
@@ -167,12 +168,12 @@ html {
 }
 
 hr {
-  background-color: transparent;
+  background-color: var(--main-color);
   border: 0;
-  height: 0.5rem;
-  box-shadow: 0 0 2px 2px var(--main-color);
-  width: 100%;
-  margin-top: 2rem;
+  height: 0.1rem;
+  /* box-shadow: 0 0 2px 2px var(--main-color); */
+  width: 70%;
+  margin-top: 4rem;
   border-radius: 100px;
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
+
 import imdbImg from "../assets/imdb-api.png";
 import reactImg from "../assets/react-logo.png";
-import logo from "../assets/Logo.png";
 import github from "../assets/github-logo.png";
 import linkedin from "../assets/linkedin.png";
 

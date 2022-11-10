@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+
+import { TYPES, GENRES, EXTRAS_VOTES, EXTRAS_TOP } from "./MediaForm.constants";
 import Modal from "./Modal";
 
 const initialParams = null;
@@ -18,18 +20,14 @@ const MediaForm = ({ handleSearch }) => {
 
   const handleFilmModal = () => {
     setFilmTypeState(!filmTypeState);
-    setTypes([]);
   };
 
   const handleGenreModal = () => {
     setGenreState(!genreState);
-    setGenres([]);
   };
 
   const handleExtraOptionsModal = () => {
     setExtraOptionsState(!extraOptionsState);
-    setVotes(10000);
-    setTop(100);
   };
 
   const typesHandleChecked = (e) => {
@@ -75,7 +73,6 @@ const MediaForm = ({ handleSearch }) => {
     setUrlParams(info);
     handleSearch(info);
     setUrlParams(initialParams);
-    /* cleanForm(); */
     document.querySelector(".footer").scrollIntoView({ behavior: "smooth" });
   };
 
@@ -142,6 +139,7 @@ const MediaForm = ({ handleSearch }) => {
                   id="type-checkbox1"
                   onChange={typesHandleChecked}
                   className="type-input"
+                  defaultChecked={types.includes(TYPES.FEATURE)}
                 />
                 <label className="type-label" htmlFor="type-checkbox1">
                   Película
@@ -154,6 +152,7 @@ const MediaForm = ({ handleSearch }) => {
                   id="type-checkbox2"
                   onChange={typesHandleChecked}
                   className="type-input"
+                  defaultChecked={types.includes(TYPES.TV_SERIES)}
                 />
                 <label className="type-label" htmlFor="type-checkbox2">
                   Serie
@@ -166,6 +165,7 @@ const MediaForm = ({ handleSearch }) => {
                   id="type-checkbox3"
                   onChange={typesHandleChecked}
                   className="type-input"
+                  defaultChecked={types.includes(TYPES.TV_MOVIES)}
                 />
                 <label className="type-label" htmlFor="type-checkbox3">
                   Película de TV
@@ -180,6 +180,7 @@ const MediaForm = ({ handleSearch }) => {
                   id="type-checkbox4"
                   onChange={typesHandleChecked}
                   className="type-input"
+                  defaultChecked={types.includes(TYPES.TV_MINISERIES)}
                 />
                 <label className="type-label" htmlFor="type-checkbox4">
                   Mini-Serie
@@ -192,6 +193,7 @@ const MediaForm = ({ handleSearch }) => {
                   id="type-checkbox5"
                   onChange={typesHandleChecked}
                   className="type-input"
+                  defaultChecked={types.includes(TYPES.DOCUMENTARY)}
                 />
                 <label className="type-label" htmlFor="type-checkbox5">
                   Documental
@@ -204,6 +206,7 @@ const MediaForm = ({ handleSearch }) => {
                   id="type-checkbox6"
                   onChange={typesHandleChecked}
                   className="type-input"
+                  defaultChecked={types.includes(TYPES.SHORT)}
                 />
                 <label className="type-label" htmlFor="type-checkbox6">
                   Cortometraje
@@ -233,6 +236,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox1"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.ACTION)}
               />
               <label className="genre-label" htmlFor="genre-checkbox1">
                 Acción
@@ -245,6 +249,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox2"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.ADVENTURE)}
               />
               <label className="genre-label" htmlFor="genre-checkbox2">
                 Aventura
@@ -257,6 +262,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox3"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.ANIMATION)}
               />
               <label className="genre-label" htmlFor="genre-checkbox3">
                 Animación
@@ -269,6 +275,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox4"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.BIOGRAPHY)}
               />
               <label className="genre-label" htmlFor="genre-checkbox4">
                 Biografía
@@ -281,6 +288,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox5"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.COMEDY)}
               />
               <label className="genre-label" htmlFor="genre-checkbox5">
                 Comedia
@@ -294,6 +302,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox6"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.CRIME)}
               />
               <label className="genre-label" htmlFor="genre-checkbox6">
                 Crimen
@@ -306,6 +315,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox7"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.DOCUMENTARY)}
               />
               <label className="genre-label" htmlFor="genre-checkbox7">
                 Documental
@@ -318,6 +328,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox8"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.DRAMA)}
               />
               <label className="genre-label" htmlFor="genre-checkbox8">
                 Drama
@@ -330,6 +341,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox9"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.FAMILY)}
               />
               <label className="genre-label" htmlFor="genre-checkbox9">
                 Familiar
@@ -342,6 +354,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox10"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.FANTASY)}
               />
               <label className="genre-label" htmlFor="genre-checkbox10">
                 Fantasía
@@ -355,6 +368,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox11"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.FILM_NOIR)}
               />
               <label className="genre-label" htmlFor="genre-checkbox11">
                 Cine Negro
@@ -367,6 +381,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox12"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.GAME_SHOW)}
               />
               <label className="genre-label" htmlFor="genre-checkbox12">
                 Programa de iuegos
@@ -379,6 +394,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox13"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.HISTORY)}
               />
               <label className="genre-label" htmlFor="genre-checkbox13">
                 Historia
@@ -391,6 +407,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox14"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.HORROR)}
               />
               <label className="genre-label" htmlFor="genre-checkbox14">
                 Terror
@@ -403,6 +420,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox15"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.MUSIC)}
               />
               <label className="genre-label" htmlFor="genre-checkbox15">
                 Música
@@ -416,6 +434,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox16"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.MUSICAL)}
               />
               <label className="genre-label" htmlFor="genre-checkbox16">
                 Musical
@@ -428,6 +447,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox17"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.MYSTERY)}
               />
               <label className="genre-label" htmlFor="genre-checkbox17">
                 Misterio
@@ -440,6 +460,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox18"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.REALITY_TV)}
               />
               <label className="genre-label" htmlFor="genre-checkbox18">
                 Reality
@@ -452,6 +473,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox19"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.ROMANCE)}
               />
               <label className="genre-label" htmlFor="genre-checkbox19">
                 Romántica
@@ -464,6 +486,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox20"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.SCI_FI)}
               />
               <label className="genre-label" htmlFor="genre-checkbox20">
                 Ciencia Ficción
@@ -477,6 +500,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox21"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.SPORT)}
               />
               <label className="genre-label" htmlFor="genre-checkbox21">
                 Deporte
@@ -489,6 +513,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox22"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.TALK_SHOW)}
               />
               <label className="genre-label" htmlFor="genre-checkbox22">
                 Talk-Show
@@ -501,6 +526,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox23"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.THRILLER)}
               />
               <label className="genre-label" htmlFor="genre-checkbox23">
                 Thriller
@@ -513,6 +539,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox24"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.WAR)}
               />
               <label className="genre-label" htmlFor="genre-checkbox24">
                 Bélica
@@ -525,6 +552,7 @@ const MediaForm = ({ handleSearch }) => {
                 id="genre-checkbox25"
                 onChange={genresHandleChecked}
                 className="genre-input"
+                defaultChecked={genres.includes(GENRES.WESTERN)}
               />
               <label className="genre-label" htmlFor="genre-checkbox25">
                 Western
@@ -554,20 +582,52 @@ const MediaForm = ({ handleSearch }) => {
                   setVotes(e.target.value);
                 }}
               >
-                <option defaultValue="10000" value="10000">
+                <option
+                  defaultValue="10000"
+                  value="10000"
+                  selected={votes === EXTRAS_VOTES[10000]}
+                >
                   Seleccione mínima cantidad de reseñas (+10.000 por defecto)
                 </option>
-                <option value="0">0 Reseñas+</option>
-                <option value="250">+250 Reseñas</option>
-                <option value="500">+500 Reseñas</option>
-                <option value="1000">+1.000 Reseñas</option>
-                <option value="2000">+2.000 Reseñas</option>
-                <option value="4000">+4.000 Reseñas</option>
-                <option value="8000">+8.000 Reseñas</option>
-                <option value="16000">+16.000 Reseñas</option>
-                <option value="32000">+32.000 Reseñas</option>
-                <option value="64000">+64.000 Reseñas</option>
-                <option value="100000">+100.000 Reseñas</option>
+                <option value="0" selected={votes === EXTRAS_VOTES[0]}>
+                  0 Reseñas+
+                </option>
+                <option value="250" selected={votes === EXTRAS_VOTES[250]}>
+                  +250 Reseñas
+                </option>
+                <option value="500" selected={votes === EXTRAS_VOTES[500]}>
+                  +500 Reseñas
+                </option>
+                <option value="1000" selected={votes === EXTRAS_VOTES[1000]}>
+                  +1.000 Reseñas
+                </option>
+                <option value="2000" selected={votes === EXTRAS_VOTES[2000]}>
+                  +2.000 Reseñas
+                </option>
+                <option value="4000" selected={votes === EXTRAS_VOTES[4000]}>
+                  +4.000 Reseñas
+                </option>
+                <option value="8000" selected={votes === EXTRAS_VOTES[8000]}>
+                  +8.000 Reseñas
+                </option>
+                <option value="10000" selected={votes === EXTRAS_VOTES[10000]}>
+                  +10.000 Reseñas
+                </option>
+                <option value="16000" selected={votes === EXTRAS_VOTES[16000]}>
+                  +16.000 Reseñas
+                </option>
+                <option value="32000" selected={votes === EXTRAS_VOTES[32000]}>
+                  +32.000 Reseñas
+                </option>
+                <option value="64000" selected={votes === EXTRAS_VOTES[64000]}>
+                  +64.000 Reseñas
+                </option>
+                <option
+                  value="100000"
+                  selected={votes === EXTRAS_VOTES[100000]}
+                >
+                  +100.000 Reseñas
+                </option>
               </select>
             </div>
             <div className="top-section">
@@ -577,14 +637,28 @@ const MediaForm = ({ handleSearch }) => {
                   setTop(e.target.value);
                 }}
               >
-                <option defaultValue="100" value="100">
+                <option
+                  defaultValue="100"
+                  value="100"
+                  selected={top === EXTRAS_TOP[100]}
+                >
                   Seleccione cantidad de títulos a mostrar (100 por defecto)
                 </option>
-                <option value="50">Top 50</option>
-                <option value="100">Top 100</option>
-                <option value="150">Top 150</option>
-                <option value="200">Top 200</option>
-                <option value="250">Top 250</option>
+                <option value="50" selected={top === EXTRAS_TOP[50]}>
+                  Top 50
+                </option>
+                <option value="100" selected={top === EXTRAS_TOP[100]}>
+                  Top 100
+                </option>
+                <option value="150" selected={top === EXTRAS_TOP[150]}>
+                  Top 150
+                </option>
+                <option value="200" selected={top === EXTRAS_TOP[200]}>
+                  Top 200
+                </option>
+                <option value="250" selected={top === EXTRAS_TOP[250]}>
+                  Top 250
+                </option>
               </select>
             </div>
           </div>
@@ -635,8 +709,8 @@ const Button = styled.button`
   letter-spacing: 0.3rem;
   font-weight: 800;
   transition: 0.5s ease all;
-  margin-top: 1.4rem;
-  margin-bottom: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 
   &:hover {
     transform: scale(1.04);

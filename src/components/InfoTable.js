@@ -1,4 +1,5 @@
 import React from "react";
+
 import InfoTableRow from "./InfoTableRow";
 
 const InfoTable = ({ data }) => {
