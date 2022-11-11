@@ -13,7 +13,6 @@ export default function MediaSearch() {
 
   const handleNavigation = () => {
     const $scrollBtn = document.querySelector(".scroll-top-btn");
-    const $resetBtn = document.querySelector(".btn-reset");
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > 1200) {
@@ -23,16 +22,6 @@ export default function MediaSearch() {
     } else {
       if (!$scrollBtn.classList.contains("hidden")) {
         $scrollBtn.classList.add("hidden");
-      }
-    }
-
-    if (scrollTop < 600) {
-      if ($resetBtn.classList.contains("hidden")) {
-        $resetBtn.classList.remove("hidden");
-      }
-    } else {
-      if (!$resetBtn.classList.contains("hidden")) {
-        $resetBtn.classList.add("hidden");
       }
     }
   };

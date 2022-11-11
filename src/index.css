@@ -43,13 +43,11 @@ html {
 }
 
 .btn-reset {
-  position: fixed;
-  z-index: 999;
-  right: 3rem;
-  top: 30%;
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
+  margin-left: 80%;
+  margin-bottom: 4rem;
+  padding-top: 1.5rem;
+  width: 15vw;
+  border-radius: 100px;
   font-size: 1rem;
   font-weight: bold;
   background-color: var(--background-color);
@@ -65,6 +63,7 @@ html {
   color: var(--third-color);
   background-color: var(--main-color);
   box-shadow: 0 0 3px 3px var(--third-color);
+  transform: scale(1.05);
 }
 
 .btn-section {
@@ -1275,6 +1274,15 @@ input[type="checkbox"]:checked:disabled + label:before {
   .top-numer > option {
     font-size: 1.3rem;
   }
+
+  .bi-recycle {
+    transform: scale(1.3);
+    margin-left: 1rem;
+  }
+
+  .btn-reset {
+    font-size: 0.9rem !important;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -1294,6 +1302,15 @@ input[type="checkbox"]:checked:disabled + label:before {
 
   .top-numer > option {
     font-size: 1.2rem;
+  }
+
+  .bi-recycle {
+    transform: scale(1.1);
+    margin-left: 1.5rem;
+  }
+
+  .btn-reset {
+    font-size: 0.7rem !important;
   }
 }
 
@@ -1375,6 +1392,21 @@ input[type="checkbox"]:checked:disabled + label:before {
     width: 5rem;
     height: 5rem;
     font-size: 3rem;
+  }
+
+  .btn-reset {
+    font-size: 0.7rem !important;
+  }
+
+  .bi-recycle {
+    transform: scale(1.3);
+    margin-left: 1.5rem;
+  }
+
+  .btn-reset {
+    margin-left: 70%;
+    width: 25vw;
+    font-size: 0.8rem !important;
   }
 }
 
