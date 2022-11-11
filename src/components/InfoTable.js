@@ -1,4 +1,5 @@
 import React from "react";
+import { Toaster, toast } from "react-hot-toast";
 
 import InfoTableRow from "./InfoTableRow";
 
@@ -6,14 +7,17 @@ const InfoTable = ({ data }) => {
   let num = 1;
 
   if (typeof data === "string") {
-    return (
-      <div className="error-container">
-        <h1 className="error-text">
-          ⛔ Error con el servidor. Intente nuevamente. ⛔
-        </h1>
-        <h4 className="error-text">{data}</h4>
-      </div>
-    );
+    toast.error(`Error con el servidor, intente nuevamente.\n "${data}"`, {
+      position: "top-right",
+      className: "toast-loading",
+      duration: 8000,
+      style: {
+        background: "#ead0c0",
+        fontSize: "1.3rem",
+        fontWeight: "600",
+      },
+    });
+    return <Toaster />;
   } else {
     return (
       <div className="film-table">
@@ -22,7 +26,8 @@ const InfoTable = ({ data }) => {
             <InfoTableRow key={el.id} el={el} num={num++}></InfoTableRow>
           ))
         ) : (
-          <div>
+          <div className="no-data-div">
+            <hr />
             <h1 className="no-data">Sin Coincidencias</h1>
           </div>
         )}

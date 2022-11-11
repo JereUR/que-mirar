@@ -76,6 +76,13 @@ const MediaForm = ({ handleSearch }) => {
     document.querySelector(".footer").scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleClickReset = () => {
+    setTypes([]);
+    setGenres([]);
+    setVotes(EXTRAS_VOTES[10000]);
+    setTop(EXTRAS_TOP[100]);
+  };
+
   return (
     <div className="container">
       <ButtonContainer>
@@ -680,6 +687,10 @@ const MediaForm = ({ handleSearch }) => {
           ></input>
         </form>
       </section>
+
+      <button onClick={handleClickReset} className="btn-reset">
+        Resetear Valores
+      </button>
     </div>
   );
 };
@@ -709,8 +720,8 @@ const Button = styled.button`
   letter-spacing: 0.3rem;
   font-weight: 800;
   transition: 0.5s ease all;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1.93rem;
+  margin-bottom: 1.93rem;
 
   &:hover {
     transform: scale(1.04);

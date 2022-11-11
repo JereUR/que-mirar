@@ -42,6 +42,31 @@ html {
   padding: 0;
 }
 
+.btn-reset {
+  position: fixed;
+  z-index: 999;
+  right: 3rem;
+  top: 30%;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--background-color);
+  box-shadow: 0 0 3px 3px var(--main-color);
+  color: var(--main-color);
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  transition: all 0.3s ease-out;
+}
+
+.btn-reset:hover {
+  color: var(--third-color);
+  background-color: var(--main-color);
+  box-shadow: 0 0 3px 3px var(--third-color);
+}
+
 .btn-section {
   display: flex;
   justify-content: center;
@@ -171,7 +196,6 @@ hr {
   background-color: var(--main-color);
   border: 0;
   height: 0.1rem;
-  /* box-shadow: 0 0 2px 2px var(--main-color); */
   width: 70%;
   margin-top: 4rem;
   border-radius: 100px;
@@ -200,9 +224,21 @@ hr {
 }
 
 .no-data {
+  color: var(--header-words);
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
+}
+
+.no-data-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -3rem;
+}
+
+.no-data-div > hr {
+  margin-bottom: 3rem;
 }
 
 .none {
@@ -245,6 +281,7 @@ hr {
   position: absolute;
   width: 64px;
   height: 64px;
+  margin-top: 2rem;
   border: 8px solid var(--header-words);
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -281,8 +318,9 @@ hr {
   border-radius: 50%;
   font-size: 4rem;
   font-weight: bold;
-  background-color: var(--main-color);
-  color: var(--third-color);
+  background-color: var(--background-color);
+  box-shadow: 0 0 3px 3px var(--main-color);
+  color: var(--main-color);
   cursor: pointer;
   outline: 0;
   border: 0;
@@ -290,8 +328,9 @@ hr {
 }
 
 .scroll-top-btn:hover {
-  color: var(--main-color);
-  background-color: var(--second-color);
+  color: var(--third-color);
+  background-color: var(--main-color);
+  box-shadow: 0 0 3px 3px var(--third-color);
 }
 
 .hidden {
@@ -361,19 +400,23 @@ hr {
   font-size: 2rem;
   font-weight: bold;
   text-decoration: none;
-  background-color: var(--third-color);
-  color: var(--words-color);
+  border: none;
+  background-color: transparent;
+  box-shadow: 0 0 3px 3px var(--main-color);
+  color: var(--main-color);
   margin-left: 2rem;
   margin-bottom: 1rem;
+  margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 5rem;
   cursor: pointer;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .btn-title:hover {
-  color: var(--header-words);
+  color: var(--third-color);
   background-color: var(--main-color);
+  box-shadow: 0 0 3px 3px var(--third-color);
   transform: scale(1.05);
 }
 
@@ -432,6 +475,7 @@ hr {
   font-weight: 700;
   font-size: 2.5rem;
   color: var(--main-color);
+  margin-top: 1rem;
 }
 
 .film-title-info {
@@ -441,6 +485,12 @@ hr {
 .film-trailer {
   display: flex;
   position: relative;
+}
+
+.hr-results {
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .imdb-logo {
@@ -463,17 +513,19 @@ hr {
   border: none;
   padding: 1rem;
   margin-top: 2rem;
-  background-color: var(--third-color);
-  color: var(--words-color);
+  background-color: transparent;
+  box-shadow: 0 0 3px 3px var(--main-color);
+  color: var(--main-color);
   font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .trailer:hover {
-  color: var(--header-words);
+  color: var(--third-color);
   background-color: var(--main-color);
+  box-shadow: 0 0 3px 3px var(--third-color);
   transform: scale(1.05);
 }
 
@@ -788,6 +840,10 @@ input[type="checkbox"]:checked:disabled + label:before {
   .type-label {
     width: 35vh !important;
   }
+
+  .toast-error {
+    font-size: 1.2rem !important;
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -826,6 +882,10 @@ input[type="checkbox"]:checked:disabled + label:before {
     margin-right: 0.3em !important;
     margin-top: 0.7em !important;
   }
+
+  .toast-error {
+    font-size: 1rem !important;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -854,6 +914,52 @@ input[type="checkbox"]:checked:disabled + label:before {
   .type-input:checked + label:after {
     width: 15px !important;
     height: 8px !important;
+  }
+
+  .modal-title {
+    font-size: 1.5rem !important;
+  }
+
+  .modal-close-button {
+    width: 25px !important;
+    height: 25px !important;
+  }
+
+  .toast-error {
+    font-size: 0.9rem !important;
+  }
+
+  .header-content h1 {
+    font-size: 6rem;
+  }
+
+  .header-content i {
+    font-size: 2rem !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .type-section-1 {
+    margin-right: 0.7vh !important;
+    margin-left: 0 !important;
+  }
+
+  .type-label {
+    font-size: 1.1rem !important;
+    padding: 0 0.5rem !important;
+    width: 19vh !important;
+  }
+
+  .type-input + label:before {
+    width: 18px !important;
+    height: 18px !important;
+    margin-right: 0.3em !important;
+  }
+
+  .type-input:checked + label:after {
+    width: 13px !important;
+    height: 7px !important;
+    margin-top: 1.2em !important;
   }
 
   .modal-title {
@@ -1040,6 +1146,28 @@ input[type="checkbox"]:checked:disabled + label:before {
   }
 }
 
+@media screen and (max-width: 400px) {
+  .genre-slc {
+    margin-left: 2vh !important;
+  }
+
+  .genre-label {
+    width: 13vh !important;
+    font-size: 0.7rem !important;
+  }
+
+  .genre-input + label:before {
+    width: 15px !important;
+    height: 15px !important;
+    margin-right: 0 !important;
+  }
+
+  .genre-input:checked + label:after {
+    width: 10px !important;
+    height: 6px !important;
+  }
+}
+
 /* Extra Options */
 
 @media screen and (max-width: 1700px) {
@@ -1166,5 +1294,169 @@ input[type="checkbox"]:checked:disabled + label:before {
 
   .top-numer > option {
     font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .num-votes {
+    width: 40vh;
+    font-size: 0.75rem;
+  }
+
+  .num-votes > option {
+    font-size: 0.75rem;
+  }
+
+  .top-number {
+    width: 40vh;
+    font-size: 0.75rem;
+  }
+
+  .top-numer > option {
+    font-size: 0.75rem;
+  }
+
+  .toast-error {
+    font-size: 0.7rem !important;
+  }
+
+  .header-content img {
+    margin-bottom: 2rem;
+  }
+
+  .header-content h1 {
+    font-size: 6rem;
+  }
+
+  .header-content i {
+    font-size: 1.5rem !important;
+  }
+
+  .footer-created p {
+    font-size: 0.9rem;
+  }
+
+  .footer-img {
+    width: 6vw;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+
+  .social img {
+    width: 6vw;
+  }
+
+  .social-icon {
+    margin: 0.2rem;
+  }
+
+  .github {
+    margin-left: 1rem !important;
+  }
+
+  #btn-submit {
+    font-size: 2.5rem;
+  }
+
+  hr {
+    margin-bottom: -3rem;
+  }
+
+  .lds-ring {
+    margin-left: -2rem;
+  }
+
+  .scroll-top-btn {
+    margin-bottom: 50px;
+    bottom: 0vh;
+    right: calc(4.25rem + 1vw);
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+  }
+}
+
+/* Responsive Results Table */
+
+@media screen and (max-width: 400px) {
+  /* Section 1 */
+
+  .film-container {
+    height: 40vh;
+    margin-left: -2rem;
+  }
+
+  .film-section-1 {
+    margin-right: 0;
+    font-weight: 500;
+  }
+
+  .film-img {
+    width: 24vh;
+  }
+
+  .film-index {
+    font-size: 1rem;
+  }
+
+  .film-index > p {
+    padding: 0.5rem;
+  }
+
+  /* Section 2 */
+
+  .film-title {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  .btn-title {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .calification {
+    padding-left: 1rem;
+    margin-top: 0.2rem !important;
+    font-size: 0.6rem;
+    margin-top: 3rem;
+  }
+
+  .imdb-logo {
+    width: 2.5vh;
+    height: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: -0.3rem !important;
+  }
+
+  .film-cast {
+    font-size: 0.7rem;
+    letter-spacing: auto;
+  }
+
+  .film-genre {
+    font-size: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .film-synopsis {
+    font-size: 0.8rem;
+  }
+
+  .hr-results {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .trailer {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
   }
 }

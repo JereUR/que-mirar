@@ -1,9 +1,14 @@
 import React from "react";
+import { Toaster, toast } from "react-hot-toast";
+import { useState } from "react";
 
 import { helpHttp } from "../helpers/helpHttp";
 import imdbLogo from "../assets/imdb-logo.png";
 
 const InfoTableRow = ({ el, num }) => {
+  const [errorTrailer, setErrorTrailer] = useState(false);
+  const [errorInfo, setErrorInfo] = useState(false);
+
   let {
     imDbRating,
     image,
@@ -16,6 +21,36 @@ const InfoTableRow = ({ el, num }) => {
     id,
   } = el;
 
+  if (errorTrailer) {
+    toast.error("Trailer no disponible 😞", {
+      position: "top-right",
+      className: "toast-error",
+      duration: 5000,
+      style: {
+        background: "#ead0c0",
+        fontSize: "1.3rem",
+        fontWeight: "600",
+      },
+    });
+
+    setErrorTrailer(false);
+  }
+
+  if (errorInfo) {
+    toast.error("Información no disponible 😞", {
+      position: "top-right",
+      className: "toast-error",
+      duration: 5000,
+      style: {
+        background: "#ead0c0",
+        fontSize: "1.3rem",
+        fontWeight: "600",
+      },
+    });
+
+    setErrorInfo(false);
+  }
+
   const handleTrailer = async (e) => {
     e.preventDefault();
 
@@ -24,15 +59,11 @@ const InfoTableRow = ({ el, num }) => {
     const [data] = await Promise.all([helpHttp().get(url)]);
 
     if (data.videoUrl === null || data.videoUrl === "") {
-      var content = document.createElement("p");
-      content.innerHTML = "Trailer no disponible 😞";
-      content.classList.add("trailer-text");
-
-      if (e.target.querySelector(".trailer-text") === null) {
-        e.target.appendChild(content);
-      }
+      setErrorTrailer(true);
     } else {
       window.open(data.videoUrl, "_blank");
+
+      return true;
     }
   };
 
@@ -44,13 +75,7 @@ const InfoTableRow = ({ el, num }) => {
     const [dataTitle] = await Promise.all([helpHttp().get(url)]);
 
     if (dataTitle.url === null || dataTitle.url === "") {
-      var content = document.createElement("p");
-      content.innerHTML = "Información no disponible 😞";
-      content.classList.add("title-text");
-
-      if (e.target.querySelector(".title-text") === null) {
-        e.target.appendChild(content);
-      }
+      setErrorInfo(true);
     } else {
       window.open(dataTitle.url, "_blank");
     }
@@ -90,11 +115,7 @@ const InfoTableRow = ({ el, num }) => {
           </div>
           <p className="film-genre">{genres}</p>
           <i className="film-synopsis">{plot}</i>
-          <br />
-          <br />
-          <hr />
-          <br />
-          <br />
+          <hr className="hr-results" />
           <p className="film-cast">
             <u>Elenco principal:</u> {stars}
           </p>
@@ -109,6 +130,7 @@ const InfoTableRow = ({ el, num }) => {
           </div>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };
