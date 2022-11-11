@@ -86,7 +86,7 @@ const MediaForm = ({ handleSearch }) => {
   return (
     <div className="container">
       <ButtonContainer>
-        <Button onClick={handleFilmModal}>
+        <Button className="btn-film-type" onClick={handleFilmModal}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

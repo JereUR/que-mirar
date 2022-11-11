@@ -1410,6 +1410,10 @@ input[type="checkbox"]:checked:disabled + label:before {
     width: 25vw;
     font-size: 0.8rem !important;
   }
+
+  .btn-film-type {
+    margin-top: 5rem !important;
+  }
 }
 
 /* Responsive Results Table */
