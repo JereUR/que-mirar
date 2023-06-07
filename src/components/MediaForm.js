@@ -1,90 +1,87 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react'
+import styled from 'styled-components'
 
-import { TYPES, GENRES, EXTRAS_VOTES, EXTRAS_TOP } from "./MediaForm.constants";
-import Modal from "./Modal";
+import { TYPES, GENRES, EXTRAS_VOTES, EXTRAS_TOP } from './MediaForm.constants'
+import Modal from './Modal'
 
-const initialParams = null;
+const initialParams = null
 
 const MediaForm = ({ handleSearch }) => {
-  const [urlParams, setUrlParams] = useState(initialParams);
+  const [urlParams, setUrlParams] = useState(initialParams)
 
-  const [filmTypeState, setFilmTypeState] = useState(false);
-  const [genreState, setGenreState] = useState(false);
-  const [extraOptionsState, setExtraOptionsState] = useState(false);
-  const [votes, setVotes] = useState(10000);
-  const [top, setTop] = useState(100);
+  const [filmTypeState, setFilmTypeState] = useState(false)
+  const [genreState, setGenreState] = useState(false)
+  const [extraOptionsState, setExtraOptionsState] = useState(false)
+  const [votes, setVotes] = useState(10000)
+  const [top, setTop] = useState(100)
 
-  const [types, setTypes] = useState([]);
-  const [genres, setGenres] = useState([]);
+  const [types, setTypes] = useState([])
+  const [genres, setGenres] = useState([])
 
   const handleFilmModal = () => {
-    setFilmTypeState(!filmTypeState);
-  };
+    setFilmTypeState(!filmTypeState)
+  }
 
   const handleGenreModal = () => {
-    setGenreState(!genreState);
-  };
+    setGenreState(!genreState)
+  }
 
   const handleExtraOptionsModal = () => {
-    setExtraOptionsState(!extraOptionsState);
-  };
+    setExtraOptionsState(!extraOptionsState)
+  }
 
   const typesHandleChecked = (e) => {
     if (!types.includes(e.target.value)) {
-      types.push(e.target.value);
+      types.push(e.target.value)
     } else {
-      setTypes(types.filter((item) => item !== e.target.value));
+      setTypes(types.filter((item) => item !== e.target.value))
     }
-  };
+  }
 
   const genresHandleChecked = (e) => {
     if (!genres.includes(e.target.value)) {
-      genres.push(e.target.value);
+      genres.push(e.target.value)
     } else {
-      setGenres(genres.filter((item) => item !== e.target.value));
+      setGenres(genres.filter((item) => item !== e.target.value))
     }
-  };
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    let tf = "";
-    let gf = "";
+    let tf = ''
+    let gf = ''
 
     types.forEach((e) => {
-      tf = tf + e + ",";
-    });
-    const typesFilter = tf.substring(0, tf.length - 1);
+      tf = tf + e + ','
+    })
+    const typesFilter = tf.substring(0, tf.length - 1)
 
     genres.forEach((e) => {
-      gf = gf + e + ",";
-    });
+      gf = gf + e + ','
+    })
 
-    const genresFilter = gf.substring(0, gf.length - 1);
-
-    console.log("Votes:", votes);
-    console.log("Top:", top);
+    const genresFilter = gf.substring(0, gf.length - 1)
 
     const info = {
       types: typesFilter,
       genres: genresFilter,
       minVotes: votes,
-      top: top,
-    };
+      top: top
+    }
 
-    setUrlParams(info);
-    handleSearch(info);
-    setUrlParams(initialParams);
-    document.querySelector(".footer").scrollIntoView({ behavior: "smooth" });
-  };
+    setUrlParams(info)
+    handleSearch(info)
+    setUrlParams(initialParams)
+    document.querySelector('.footer').scrollIntoView({ behavior: 'smooth' })
+  }
 
   const handleClickReset = () => {
-    setTypes([]);
-    setGenres([]);
-    setVotes(EXTRAS_VOTES[10000]);
-    setTop(EXTRAS_TOP[100]);
-  };
+    setTypes([])
+    setGenres([])
+    setVotes(EXTRAS_VOTES[10000])
+    setTop(EXTRAS_TOP[100])
+  }
 
   return (
     <div className="container">
@@ -605,7 +602,7 @@ const MediaForm = ({ handleSearch }) => {
               <select
                 className="num-votes"
                 onClick={(e) => {
-                  setVotes(e.target.value);
+                  setVotes(e.target.value)
                 }}
               >
                 <option value="10000" selected={votes === EXTRAS_VOTES[10000]}>
@@ -656,7 +653,7 @@ const MediaForm = ({ handleSearch }) => {
               <select
                 className="top-number"
                 onClick={(e) => {
-                  setTop(e.target.value);
+                  setTop(e.target.value)
                 }}
               >
                 <option value="100" selected={top === EXTRAS_TOP[100]}>
@@ -699,10 +696,10 @@ const MediaForm = ({ handleSearch }) => {
         </form>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default MediaForm;
+export default MediaForm
 
 const ButtonContainer = styled.div`
   padding: 50px;
@@ -710,7 +707,7 @@ const ButtonContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 20px;
-`;
+`
 
 const Button = styled.button`
   width: 120vh;
@@ -733,7 +730,7 @@ const Button = styled.button`
   &:hover {
     transform: scale(1.04);
   }
-`;
+`
 
 const AcceptButton = styled.button`
   display: block;
@@ -743,7 +740,7 @@ const AcceptButton = styled.button`
   border: none;
   background: var(--main-color);
   cursor: pointer;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 800;
   font-size: 2rem;
   transition: 0.5s ease all;
@@ -754,7 +751,7 @@ const AcceptButton = styled.button`
   &:hover {
     transform: scale(1.01);
   }
-`;
+`
 
 const Content = styled.div`
   display: flex;
@@ -777,4 +774,4 @@ const Content = styled.div`
     vertical-align: top;
     border-radius: 3px;
   }
-`;
+`

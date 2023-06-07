@@ -1,13 +1,13 @@
-import React from "react";
-import { Toaster, toast } from "react-hot-toast";
-import { useState } from "react";
+import React from 'react'
+import { Toaster, toast } from 'react-hot-toast'
+import { useState } from 'react'
 
-import { helpHttp } from "../helpers/helpHttp";
-import imdbLogo from "../assets/imdb-logo.png";
+import { helpHttp } from '../helpers/helpHttp'
+import imdbLogo from '../assets/imdb-logo.png'
 
 const InfoTableRow = ({ el, num }) => {
-  const [errorTrailer, setErrorTrailer] = useState(false);
-  const [errorInfo, setErrorInfo] = useState(false);
+  const [errorTrailer, setErrorTrailer] = useState(false)
+  const [errorInfo, setErrorInfo] = useState(false)
 
   let {
     imDbRating,
@@ -18,68 +18,68 @@ const InfoTableRow = ({ el, num }) => {
     plot,
     imDbRatingVotes,
     stars,
-    id,
-  } = el;
+    id
+  } = el
 
   if (errorTrailer) {
-    toast.error("Trailer no disponible 😞", {
-      position: "top-right",
-      className: "toast-error",
+    toast.error('Trailer no disponible 😞', {
+      position: 'top-right',
+      className: 'toast-error',
       duration: 5000,
       style: {
-        background: "#ead0c0",
-        fontSize: "1.3rem",
-        fontWeight: "600",
-      },
-    });
+        background: '#ead0c0',
+        fontSize: '1.3rem',
+        fontWeight: '600'
+      }
+    })
 
-    setErrorTrailer(false);
+    setErrorTrailer(false)
   }
 
   if (errorInfo) {
-    toast.error("Información no disponible 😞", {
-      position: "top-right",
-      className: "toast-error",
+    toast.error('Información no disponible 😞', {
+      position: 'top-right',
+      className: 'toast-error',
       duration: 5000,
       style: {
-        background: "#ead0c0",
-        fontSize: "1.3rem",
-        fontWeight: "600",
-      },
-    });
+        background: '#ead0c0',
+        fontSize: '1.3rem',
+        fontWeight: '600'
+      }
+    })
 
-    setErrorInfo(false);
+    setErrorInfo(false)
   }
 
   const handleTrailer = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    let url = `${process.env.REACT_APP_API_HREF}${id}`;
+    let url = `${process.env.REACT_APP_API_HREF}${id}`
 
-    const [data] = await Promise.all([helpHttp().get(url)]);
+    const [data] = await Promise.all([helpHttp().get(url)])
 
-    if (data.videoUrl === null || data.videoUrl === "") {
-      setErrorTrailer(true);
+    if (data.videoUrl === null || data.videoUrl === '') {
+      setErrorTrailer(true)
     } else {
-      window.open(data.videoUrl, "_blank");
+      window.open(data.videoUrl, '_blank')
 
-      return true;
+      return true
     }
-  };
+  }
 
   const handleTitle = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    let url = `${process.env.REACT_APP_API_TITLE}${id}`;
+    let url = `${process.env.REACT_APP_API_TITLE}${id}`
 
-    const [dataTitle] = await Promise.all([helpHttp().get(url)]);
+    const [dataTitle] = await Promise.all([helpHttp().get(url)])
 
-    if (dataTitle.url === null || dataTitle.url === "") {
-      setErrorInfo(true);
+    if (dataTitle.url === null || dataTitle.url === '') {
+      setErrorInfo(true)
     } else {
-      window.open(dataTitle.url, "_blank");
+      window.open(dataTitle.url, '_blank')
     }
-  };
+  }
 
   return (
     <div className="film-container">
@@ -132,7 +132,7 @@ const InfoTableRow = ({ el, num }) => {
       </div>
       <Toaster />
     </div>
-  );
-};
+  )
+}
 
-export default InfoTableRow;
+export default InfoTableRow
