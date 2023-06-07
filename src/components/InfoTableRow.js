@@ -74,10 +74,27 @@ const InfoTableRow = ({ el, num }) => {
 
     const [dataTitle] = await Promise.all([helpHttp().get(url)])
 
-    if (dataTitle.url === null || dataTitle.url === '') {
+    if (
+      dataTitle.officialWebsite === null ||
+      dataTitle.officialWebsite === ''
+    ) {
       setErrorInfo(true)
     } else {
-      window.open(dataTitle.url, '_blank')
+      window.open(dataTitle.officialWebsite, '_blank')
+    }
+  }
+
+  const handleIMDB = async (e) => {
+    e.preventDefault()
+
+    let url = `${process.env.REACT_APP_API_TITLE}${id}`
+
+    const [dataTitle] = await Promise.all([helpHttp().get(url)])
+
+    if (dataTitle.imDb.url === null || dataTitle.imDb.url === '') {
+      setErrorInfo(true)
+    } else {
+      window.open(dataTitle.imDb.url, '_blank')
     }
   }
 
@@ -103,6 +120,13 @@ const InfoTableRow = ({ el, num }) => {
                   type="submit"
                   className="btn-title"
                   value="Más info..."
+                ></input>
+              </form>
+              <form className="btn-title-form" onSubmit={handleIMDB}>
+                <input
+                  type="submit"
+                  className="btn-title"
+                  value="Ir a IMDB..."
                 ></input>
               </form>
             </div>

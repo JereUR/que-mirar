@@ -6,4 +6,4 @@ First you have to create the .env file with the information/variables provided i
 
 Then run "npm install" in the terminal to install the dependencies and finally run "npm run start" to start the application.
 
-Please note that the free Api Key is limited to 100 queries per day. For each general search, one query is taken into account, while for the search for "more info" or "trailer" once the general search is carried out, each of these will be taken as one more query.
+Please note that the free Api Key is limited to 100 queries per day. For each general search, one query is taken into account, while for the search for "more info/Go to IMDB" or "trailer" once the general search is carried out, each of these will be taken as one more query.
