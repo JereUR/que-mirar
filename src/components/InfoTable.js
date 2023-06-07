@@ -1,23 +1,23 @@
-import React from "react";
-import { Toaster, toast } from "react-hot-toast";
+import React from 'react'
+import { Toaster, toast } from 'react-hot-toast'
 
-import InfoTableRow from "./InfoTableRow";
+import InfoTableRow from './InfoTableRow'
 
 const InfoTable = ({ data }) => {
-  let num = 1;
+  let num = 1
 
-  if (typeof data === "string") {
-    toast.error(`Error con el servidor, intente nuevamente.\n "${data}"`, {
-      position: "top-right",
-      className: "toast-loading",
+  if (typeof data === 'string') {
+    toast.error(`Server error, try again.\n "${data}"`, {
+      position: 'top-right',
+      className: 'toast-loading',
       duration: 8000,
       style: {
-        background: "#ead0c0",
-        fontSize: "1.3rem",
-        fontWeight: "600",
-      },
-    });
-    return <Toaster />;
+        background: '#ead0c0',
+        fontSize: '1.3rem',
+        fontWeight: '600'
+      }
+    })
+    return <Toaster />
   } else {
     return (
       <div className="film-table">
@@ -28,12 +28,12 @@ const InfoTable = ({ data }) => {
         ) : (
           <div className="no-data-div">
             <hr />
-            <h1 className="no-data">Sin Coincidencias</h1>
+            <h1 className="no-data">No Matches</h1>
           </div>
         )}
       </div>
-    );
+    )
   }
-};
+}
 
-export default InfoTable;
+export default InfoTable

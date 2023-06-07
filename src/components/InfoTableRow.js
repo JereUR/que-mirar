@@ -119,14 +119,14 @@ const InfoTableRow = ({ el, num }) => {
                 <input
                   type="submit"
                   className="btn-title"
-                  value="Más info..."
+                  value="More info..."
                 ></input>
               </form>
               <form className="btn-title-form" onSubmit={handleIMDB}>
                 <input
                   type="submit"
                   className="btn-title"
-                  value="Ir a IMDB..."
+                  value="Go to IMDB..."
                 ></input>
               </form>
             </div>
@@ -134,21 +134,21 @@ const InfoTableRow = ({ el, num }) => {
           <div className="film-calification">
             <img src={imdbLogo} alt="imdb-logo" className="imdb-logo" />
             <p className="calification">
-              ⭐{imDbRating} - <i>{imDbRatingVotes} Reseñas</i>
+              ⭐{imDbRating} - <i>{imDbRatingVotes} Reviews</i>
             </p>
           </div>
           <p className="film-genre">{genres}</p>
           <i className="film-synopsis">{plot}</i>
           <hr className="hr-results" />
           <p className="film-cast">
-            <u>Elenco principal:</u> {stars}
+            <u>Main cast:</u> {stars}
           </p>
           <div className="film-trailer">
             <form className="trailer-form" onSubmit={handleTrailer}>
               <input
                 type="submit"
                 className="trailer"
-                value="VER TRAILER>>>"
+                value="WATCH TRAILER>>>"
               ></input>
             </form>
           </div>
