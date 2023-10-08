@@ -1,4 +1,4 @@
-**Paused due to a change in the IMDB API policies that interrupts its free service..**
+<font color="red">Paused due to a change in the IMDB API policies that interrupts its free service.</font>
   
   
   <img src="https://cdn.discordapp.com/attachments/894702938386210896/997024365529014302/Logo.png" width="350" title="Logo Image">
